@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7323289F2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7323289E2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift */; };
+		7311F07F2A6F1BB5003316B3 /* CIMISServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F07E2A6F1BB5003316B3 /* CIMISServices.swift */; };
+		7311F0812A6F1BD3003316B3 /* MockServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F0802A6F1BD3003316B3 /* MockServices.swift */; };
+		7323289F2A6DB91F000EF095 /* CIMISStationBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */; };
 		732328A12A6DB91F000EF095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A02A6DB91F000EF095 /* ContentView.swift */; };
 		732328A32A6DB924000EF095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A22A6DB924000EF095 /* Assets.xcassets */; };
 		732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A52A6DB924000EF095 /* Preview Assets.xcassets */; };
-		732328A82A6DB924000EF095 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A72A6DB924000EF095 /* Persistence.swift */; };
-		732328AB2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732328A92A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld */; };
+		732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A72A6DB924000EF095 /* PersistenceController.swift */; };
+		732328AB2A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732328A92A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld */; };
 		732328B52A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */; };
 		732328BF2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */; };
 		732328C12A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */; };
+		732328CE2A6DC190000EF095 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328CD2A6DC190000EF095 /* Networking.swift */; };
+		732328D02A6DC1CF000EF095 /* StationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328CF2A6DC1CF000EF095 /* StationModels.swift */; };
+		732328D32A6DC316000EF095 /* StationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328D22A6DC316000EF095 /* StationListView.swift */; };
+		732328D52A6DC355000EF095 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328D42A6DC354000EF095 /* CoreDataView.swift */; };
+		732328DA2A6DD606000EF095 /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328D92A6DD606000EF095 /* StationListViewModel.swift */; };
+		732328DC2A6E2123000EF095 /* CIMISStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328DB2A6E2123000EF095 /* CIMISStationsService.swift */; };
+		732328DE2A6E25B2000EF095 /* ServicesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328DD2A6E25B2000EF095 /* ServicesInterface.swift */; };
+		732328E12A6E2779000EF095 /* MockStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E02A6E2779000EF095 /* MockStationsService.swift */; };
+		732328E32A6E2840000EF095 /* mock-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 732328E22A6E2840000EF095 /* mock-stations.json */; };
+		732328E52A6E2E46000EF095 /* MockNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E42A6E2E46000EF095 /* MockNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,18 +48,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7311F07E2A6F1BB5003316B3 /* CIMISServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMISServices.swift; sourceTree = "<group>"; };
+		7311F0802A6F1BD3003316B3 /* MockServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServices.swift; sourceTree = "<group>"; };
 		7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIMIS-Station-Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7323289E2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserApp.swift; sourceTree = "<group>"; };
+		7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMISStationBrowserApp.swift; sourceTree = "<group>"; };
 		732328A02A6DB91F000EF095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		732328A22A6DB924000EF095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		732328A52A6DB924000EF095 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		732328A72A6DB924000EF095 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		732328A72A6DB924000EF095 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CIMIS_Station_Browser.xcdatamodel; sourceTree = "<group>"; };
 		732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserTests.swift; sourceTree = "<group>"; };
 		732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 		732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		732328CD2A6DC190000EF095 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		732328CF2A6DC1CF000EF095 /* StationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModels.swift; sourceTree = "<group>"; };
+		732328D22A6DC316000EF095 /* StationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListView.swift; sourceTree = "<group>"; };
+		732328D42A6DC354000EF095 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
+		732328D92A6DD606000EF095 /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
+		732328DB2A6E2123000EF095 /* CIMISStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMISStationsService.swift; sourceTree = "<group>"; };
+		732328DD2A6E25B2000EF095 /* ServicesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesInterface.swift; sourceTree = "<group>"; };
+		732328E02A6E2779000EF095 /* MockStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStationsService.swift; sourceTree = "<group>"; };
+		732328E22A6E2840000EF095 /* mock-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mock-stations.json"; sourceTree = "<group>"; };
+		732328E42A6E2E46000EF095 /* MockNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7311F07D2A6F1B20003316B3 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				732328A72A6DB924000EF095 /* PersistenceController.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		732328922A6DB91F000EF095 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +130,13 @@
 		7323289D2A6DB91F000EF095 /* CIMIS-Station-Browser */ = {
 			isa = PBXGroup;
 			children = (
-				7323289E2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift */,
+				732328D12A6DC2F8000EF095 /* Views */,
+				7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */,
 				732328A02A6DB91F000EF095 /* ContentView.swift */,
 				732328A22A6DB924000EF095 /* Assets.xcassets */,
-				732328A72A6DB924000EF095 /* Persistence.swift */,
-				732328A92A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld */,
+				732328D72A6DCA37000EF095 /* Models */,
+				732328D62A6DC510000EF095 /* Services */,
+				732328A92A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld */,
 				732328A42A6DB924000EF095 /* Preview Content */,
 			);
 			path = "CIMIS-Station-Browser";
@@ -131,6 +165,56 @@
 				732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */,
 			);
 			path = "CIMIS-Station-BrowserUITests";
+			sourceTree = "<group>";
+		};
+		732328D12A6DC2F8000EF095 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				732328D42A6DC354000EF095 /* CoreDataView.swift */,
+				732328D82A6DD5F7000EF095 /* StationList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		732328D62A6DC510000EF095 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				732328DD2A6E25B2000EF095 /* ServicesInterface.swift */,
+				7311F07E2A6F1BB5003316B3 /* CIMISServices.swift */,
+				7311F0802A6F1BD3003316B3 /* MockServices.swift */,
+				7311F07D2A6F1B20003316B3 /* Local */,
+				732328CD2A6DC190000EF095 /* Networking.swift */,
+				732328E42A6E2E46000EF095 /* MockNetworking.swift */,
+				732328DF2A6E2765000EF095 /* Stations */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		732328D72A6DCA37000EF095 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				732328CF2A6DC1CF000EF095 /* StationModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		732328D82A6DD5F7000EF095 /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				732328D22A6DC316000EF095 /* StationListView.swift */,
+				732328D92A6DD606000EF095 /* StationListViewModel.swift */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
+		732328DF2A6E2765000EF095 /* Stations */ = {
+			isa = PBXGroup;
+			children = (
+				732328DB2A6E2123000EF095 /* CIMISStationsService.swift */,
+				732328E02A6E2779000EF095 /* MockStationsService.swift */,
+				732328E22A6E2840000EF095 /* mock-stations.json */,
+			);
+			path = Stations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */,
+				732328E32A6E2840000EF095 /* mock-stations.json in Resources */,
 				732328A32A6DB924000EF095 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,10 +348,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732328A82A6DB924000EF095 /* Persistence.swift in Sources */,
+				732328E12A6E2779000EF095 /* MockStationsService.swift in Sources */,
+				732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */,
+				732328CE2A6DC190000EF095 /* Networking.swift in Sources */,
+				7311F07F2A6F1BB5003316B3 /* CIMISServices.swift in Sources */,
 				732328A12A6DB91F000EF095 /* ContentView.swift in Sources */,
-				7323289F2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift in Sources */,
-				732328AB2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld in Sources */,
+				732328D52A6DC355000EF095 /* CoreDataView.swift in Sources */,
+				732328D02A6DC1CF000EF095 /* StationModels.swift in Sources */,
+				732328E52A6E2E46000EF095 /* MockNetworking.swift in Sources */,
+				7311F0812A6F1BD3003316B3 /* MockServices.swift in Sources */,
+				732328DC2A6E2123000EF095 /* CIMISStationsService.swift in Sources */,
+				732328D32A6DC316000EF095 /* StationListView.swift in Sources */,
+				732328DA2A6DD606000EF095 /* StationListViewModel.swift in Sources */,
+				7323289F2A6DB91F000EF095 /* CIMISStationBrowserApp.swift in Sources */,
+				732328DE2A6E25B2000EF095 /* ServicesInterface.swift in Sources */,
+				732328AB2A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,13 +683,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		732328A92A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld */ = {
+		732328A92A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */,
 			);
 			currentVersion = 732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */;
-			path = CIMIS_Station_Browser.xcdatamodeld;
+			path = CIMISStationBrowser.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

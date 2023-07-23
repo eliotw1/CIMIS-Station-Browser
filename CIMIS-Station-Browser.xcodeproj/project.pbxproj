@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7323289F2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7323289E2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift */; };
+		732328A12A6DB91F000EF095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A02A6DB91F000EF095 /* ContentView.swift */; };
+		732328A32A6DB924000EF095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A22A6DB924000EF095 /* Assets.xcassets */; };
+		732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A52A6DB924000EF095 /* Preview Assets.xcassets */; };
+		732328A82A6DB924000EF095 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A72A6DB924000EF095 /* Persistence.swift */; };
+		732328AB2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732328A92A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld */; };
+		732328B52A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */; };
+		732328BF2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */; };
+		732328C12A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		732328B12A6DB924000EF095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732328932A6DB91F000EF095 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7323289A2A6DB91F000EF095;
+			remoteInfo = "CIMIS-Station-Browser";
+		};
+		732328BB2A6DB924000EF095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732328932A6DB91F000EF095 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7323289A2A6DB91F000EF095;
+			remoteInfo = "CIMIS-Station-Browser";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIMIS-Station-Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7323289E2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserApp.swift; sourceTree = "<group>"; };
+		732328A02A6DB91F000EF095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		732328A22A6DB924000EF095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		732328A52A6DB924000EF095 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		732328A72A6DB924000EF095 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CIMIS_Station_Browser.xcdatamodel; sourceTree = "<group>"; };
+		732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserTests.swift; sourceTree = "<group>"; };
+		732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
+		732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		732328982A6DB91F000EF095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732328AD2A6DB924000EF095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732328B72A6DB924000EF095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		732328922A6DB91F000EF095 = {
+			isa = PBXGroup;
+			children = (
+				7323289D2A6DB91F000EF095 /* CIMIS-Station-Browser */,
+				732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */,
+				732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */,
+				7323289C2A6DB91F000EF095 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7323289C2A6DB91F000EF095 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */,
+				732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */,
+				732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7323289D2A6DB91F000EF095 /* CIMIS-Station-Browser */ = {
+			isa = PBXGroup;
+			children = (
+				7323289E2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift */,
+				732328A02A6DB91F000EF095 /* ContentView.swift */,
+				732328A22A6DB924000EF095 /* Assets.xcassets */,
+				732328A72A6DB924000EF095 /* Persistence.swift */,
+				732328A92A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld */,
+				732328A42A6DB924000EF095 /* Preview Content */,
+			);
+			path = "CIMIS-Station-Browser";
+			sourceTree = "<group>";
+		};
+		732328A42A6DB924000EF095 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				732328A52A6DB924000EF095 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */,
+			);
+			path = "CIMIS-Station-BrowserTests";
+			sourceTree = "<group>";
+		};
+		732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */ = {
+			isa = PBXGroup;
+			children = (
+				732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */,
+				732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */,
+			);
+			path = "CIMIS-Station-BrowserUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732328C42A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-Browser" */;
+			buildPhases = (
+				732328972A6DB91F000EF095 /* Sources */,
+				732328982A6DB91F000EF095 /* Frameworks */,
+				732328992A6DB91F000EF095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CIMIS-Station-Browser";
+			productName = "CIMIS-Station-Browser";
+			productReference = 7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		732328AF2A6DB924000EF095 /* CIMIS-Station-BrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732328C72A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-BrowserTests" */;
+			buildPhases = (
+				732328AC2A6DB924000EF095 /* Sources */,
+				732328AD2A6DB924000EF095 /* Frameworks */,
+				732328AE2A6DB924000EF095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				732328B22A6DB924000EF095 /* PBXTargetDependency */,
+			);
+			name = "CIMIS-Station-BrowserTests";
+			productName = "CIMIS-Station-BrowserTests";
+			productReference = 732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		732328B92A6DB924000EF095 /* CIMIS-Station-BrowserUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732328CA2A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-BrowserUITests" */;
+			buildPhases = (
+				732328B62A6DB924000EF095 /* Sources */,
+				732328B72A6DB924000EF095 /* Frameworks */,
+				732328B82A6DB924000EF095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				732328BC2A6DB924000EF095 /* PBXTargetDependency */,
+			);
+			name = "CIMIS-Station-BrowserUITests";
+			productName = "CIMIS-Station-BrowserUITests";
+			productReference = 732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		732328932A6DB91F000EF095 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					7323289A2A6DB91F000EF095 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					732328AF2A6DB924000EF095 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 7323289A2A6DB91F000EF095;
+					};
+					732328B92A6DB924000EF095 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 7323289A2A6DB91F000EF095;
+					};
+				};
+			};
+			buildConfigurationList = 732328962A6DB91F000EF095 /* Build configuration list for PBXProject "CIMIS-Station-Browser" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 732328922A6DB91F000EF095;
+			productRefGroup = 7323289C2A6DB91F000EF095 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */,
+				732328AF2A6DB924000EF095 /* CIMIS-Station-BrowserTests */,
+				732328B92A6DB924000EF095 /* CIMIS-Station-BrowserUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		732328992A6DB91F000EF095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */,
+				732328A32A6DB924000EF095 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732328AE2A6DB924000EF095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732328B82A6DB924000EF095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		732328972A6DB91F000EF095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732328A82A6DB924000EF095 /* Persistence.swift in Sources */,
+				732328A12A6DB91F000EF095 /* ContentView.swift in Sources */,
+				7323289F2A6DB91F000EF095 /* CIMIS_Station_BrowserApp.swift in Sources */,
+				732328AB2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732328AC2A6DB924000EF095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732328B52A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732328B62A6DB924000EF095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732328C12A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift in Sources */,
+				732328BF2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		732328B22A6DB924000EF095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */;
+			targetProxy = 732328B12A6DB924000EF095 /* PBXContainerItemProxy */;
+		};
+		732328BC2A6DB924000EF095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */;
+			targetProxy = 732328BB2A6DB924000EF095 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		732328C22A6DB924000EF095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		732328C32A6DB924000EF095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		732328C52A6DB924000EF095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CIMIS-Station-Browser/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		732328C62A6DB924000EF095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CIMIS-Station-Browser/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		732328C82A6DB924000EF095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CIMIS-Station-Browser.app/CIMIS-Station-Browser";
+			};
+			name = Debug;
+		};
+		732328C92A6DB924000EF095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CIMIS-Station-Browser.app/CIMIS-Station-Browser";
+			};
+			name = Release;
+		};
+		732328CB2A6DB924000EF095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CIMIS-Station-Browser";
+			};
+			name = Debug;
+		};
+		732328CC2A6DB924000EF095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CIMIS-Station-Browser";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		732328962A6DB91F000EF095 /* Build configuration list for PBXProject "CIMIS-Station-Browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732328C22A6DB924000EF095 /* Debug */,
+				732328C32A6DB924000EF095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732328C42A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-Browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732328C52A6DB924000EF095 /* Debug */,
+				732328C62A6DB924000EF095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732328C72A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-BrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732328C82A6DB924000EF095 /* Debug */,
+				732328C92A6DB924000EF095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732328CA2A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-BrowserUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732328CB2A6DB924000EF095 /* Debug */,
+				732328CC2A6DB924000EF095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		732328A92A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */,
+			);
+			currentVersion = 732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */;
+			path = CIMIS_Station_Browser.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 732328932A6DB91F000EF095 /* Project object */;
+}

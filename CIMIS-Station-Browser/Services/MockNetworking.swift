@@ -17,7 +17,7 @@ struct MockNetworking {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
-            return Fail(error: APIError.invalidURL(message: "Invalid URL"))
+            return Fail(error: ServiceError.invalidURL(message: "Invalid URL"))
                 .eraseToAnyPublisher()
         }
         return Just(decodedData)

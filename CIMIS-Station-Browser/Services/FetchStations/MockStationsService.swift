@@ -8,14 +8,14 @@
 import Combine
 import Foundation
 
-class MockSuccessfulStationsService: StationsServiceInterface {
+class MockSuccessfulStationsService: FetchStationsServiceInterface {
     
     func fetchStations() -> AnyPublisher<StationsResponse, Error> {
-        return MockNetworking.mockResponse(from: "mock-stations")
+        return MockNetworking.mockResponse(from: "all-stations")
     }
 }
 
-class MockFailureStationsService: StationsServiceInterface {
+class MockFailureStationsService: FetchStationsServiceInterface {
     
     func fetchStations() -> AnyPublisher<StationsResponse, Error> {
         return Fail(

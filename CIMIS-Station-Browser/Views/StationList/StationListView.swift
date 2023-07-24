@@ -9,15 +9,14 @@ import SwiftUI
 
 struct StationListView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \StationEntity.number, ascending: true)],
-        animation: .default)
-    private var savedStations: FetchedResults<StationEntity>
-    
-    init(stationsProvider: StationsServiceInterface) {
-        self.viewModel = StationListViewModel(stationsProvider: stationsProvider)
+    init(
+        stationsService: FetchStationsServiceInterface,
+        savedStationsService: SavedStationServiceInterface
+    ) {
+        self.viewModel = StationListViewModel(
+            stationsService: stationsService,
+            savedStationsService: savedStationsService
+        )
     }
     
     @ObservedObject private var viewModel: StationListViewModel
@@ -29,7 +28,7 @@ struct StationListView: View {
                 .navigationBarItems(
                     trailing:
                         Button(action: {
-                            viewModel.loadStations()
+                            viewModel.getAllStations()
                         }, label: {
                             Image(systemName: "arrow.clockwise")
                         })
@@ -52,7 +51,7 @@ internal extension StationListView {
     
     func didAppear() {
         guard case .initial = viewModel.stationsState else { return }
-        viewModel.loadStations()
+        viewModel.getAllStations()
     }
     
     @ViewBuilder
@@ -73,7 +72,7 @@ internal extension StationListView {
         Group {
             Text(error.localizedDescription)
             Button(action: {
-                viewModel.loadStations()
+                viewModel.getAllStations()
             }, label: {
                 Text("Retry")
             })
@@ -90,12 +89,9 @@ internal extension StationListView {
     
     @ViewBuilder
     var savedSection: some View {
-        if !savedStations.isEmpty {
+        if !viewModel.savedStationsState.savedStations.isEmpty {
             Section("Saved") {
-                ForEach(savedStations
-                    .compactMap { $0.toStation() },
-                        id: \.number
-                ) {
+                ForEach(viewModel.savedStationsState.savedStations, id: \.number) {
                     stationRow($0)
                 }
             }
@@ -223,63 +219,74 @@ extension Station {
 internal extension StationListView {
     
     func isSaved(_ station: Station) -> Bool {
-        savedStations.contains(where: { $0.number == station.number })
+        viewModel.savedStationsState.savedStations.contains(where: { $0.number == station.number })
     }
     
     func toggleSaved(_ station: Station) {
         if isSaved(station) {
-            removeFavorite(stationNumber: station.number)
+            viewModel.removeFavorite(station: station)
+//            removeFavorite(stationNumber: station.number)
         } else {
-            addFavorite(station)
+//            addFavorite(station)
+            viewModel.addFavorite(station)
         }
     }
     
-    private func addFavorite(_ station: Station) {
-        withAnimation {
-            savedStations
-                .filter { $0.number == station.number }
-                .forEach(viewContext.delete(_:))
-            let newFavorite = StationEntity(context: viewContext)
-            newFavorite.update(with: station)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-    private func removeFavorite(stationNumber: String) {
-        withAnimation {
-            savedStations
-                .filter { $0.number == stationNumber }
-                .forEach(viewContext.delete(_:))
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func addFavorite(_ station: Station) {
+//        withAnimation {
+//            savedStations
+//                .filter { $0.number == station.number }
+//                .forEach(viewContext.delete(_:))
+//            let newFavorite = StationEntity(context: viewContext)
+//            newFavorite.update(with: station)
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+//
+//    private func removeFavorite(stationNumber: String) {
+//        withAnimation {
+//            savedStations
+//                .filter { $0.number == stationNumber }
+//                .forEach(viewContext.delete(_:))
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 }
 
 #if DEBUG
 struct StationListView_Previews: PreviewProvider {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
     static var previews: some View {
         Group {
-            StationListView(stationsProvider: MockSuccessfulStationsService())
-                .previewDisplayName("Success")
+            StationListView(
+                stationsService: MockSuccessfulStationsService(),
+                savedStationsService: MockSavedStationService()
+            )
+            .previewDisplayName("Success")
             
-            StationListView(stationsProvider: MockFailureStationsService())
-                .previewDisplayName("Failure")
+            StationListView(
+                stationsService: MockFailureStationsService(),
+                savedStationsService: MockFailingSavedStationService()
+            )
+            .previewDisplayName("Failure")
         }
     }
 }

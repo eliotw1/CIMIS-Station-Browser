@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
     private var services: ServicesInterface
     
     init(services: ServicesInterface) {
@@ -18,12 +16,26 @@ struct ContentView: View {
     }
     
     var body: some View {
-        StationListView(stationsProvider: services.stationService)
+        StationListView(
+            stationsService: services.fetchStationsService,
+            savedStationsService: services.savedStationsService
+        )
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(services: MockSuccessfulServices()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView(
+            services: ServicesContainer(
+                fetchService: MockSuccessfulStationsService(),
+                savedService: SavedStationService(
+                    context: PersistenceController.preview.container.viewContext
+                )
+            )
+        )
+        .environment(
+            \.managedObjectContext,
+             PersistenceController.preview.container.viewContext
+        )
     }
 }

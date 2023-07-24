@@ -19,55 +19,144 @@ class StationListViewModel: ObservableObject {
     
     enum SavedStationsState {
         case initial
-        case fetching([Station])
+        case updating([Station])
         case loaded([Station])
         case error([Station], Error)
+        
+        var savedStations: [Station] {
+            switch self {
+            case .initial:
+                return []
+            case .updating(let array),
+                    .loaded(let array),
+                    .error(let array, _):
+                return array
+            }
+        }
     }
     
-    @Published var savedState = SavedStationsState.initial
+    @Published var savedStationsState = SavedStationsState.initial
     @Published var stationsState = StationsServiceState.initial
+    
+    private var savedStations = [Station]()
     
     private var allStations = [Station]()
     private var activeStations: [Station] {
         allStations.filter { $0.isActive }
     }
     
-    private let stationsProvider: StationsServiceInterface
+    private let savedStationsService: SavedStationServiceInterface
+    private let stationsService: FetchStationsServiceInterface
     private var cancellables = Set<AnyCancellable>()
     
-    init(stationsProvider: StationsServiceInterface) {
-        self.stationsProvider = stationsProvider
+    init(
+        stationsService: FetchStationsServiceInterface,
+        savedStationsService: SavedStationServiceInterface
+    ) {
+        self.stationsService = stationsService
+        self.savedStationsService = savedStationsService
+        getSavedStations()
     }
     
-    func loadStations() {
+    func cancelRequests() {
+        cancellables.forEach { $0.cancel() }
+    }
+}
+
+// MARK: FetchStations
+extension StationListViewModel {
+    func getAllStations() {
         stationsState = .loading
-        stationsProvider.fetchStations()
+        stationsService.fetchStations()
             .sink(receiveCompletion: { [weak self] completion in
                 if case .failure(let error) = completion {
                     DispatchQueue.main.async {
                         guard let self = self else { return }
-                        self.setError(error)
+                        self.setFetchStationsError(error)
                     }
                 }
             }, receiveValue: { [weak self] (response: StationsResponse) in
                 DispatchQueue.main.async {
                     guard let self = self else { return }
-                    self.setStations(response.stations)
+                    self.setFetchedStations(response.stations)
                 }
             })
             .store(in: &cancellables)
     }
     
-    func setError(_ error: Error) {
+    private func setFetchStationsError(_ error: Error) {
         stationsState = .error(activeStations, error)
     }
     
-    func setStations(_ stations: [Station]) {
+    private func setFetchedStations(_ stations: [Station]) {
         allStations = stations
         stationsState = .loaded(activeStations)
     }
+}
+
+// MARK: SavedStations
+extension StationListViewModel {
+    func getSavedStations() {
+        savedStationsState = .updating(savedStations)
+        savedStationsService.getSaved()
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure(let error) = completion {
+                    DispatchQueue.main.async {
+                        guard let self = self else { return }
+                        self.setFetchStationsError(error)
+                    }
+                }
+            }, receiveValue: { [weak self] (saved: [Station]) in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.setSavedStations(saved)
+                }
+            })
+            .store(in: &cancellables)
+    }
     
-    func cancelRequests() {
-        cancellables.forEach { $0.cancel() }
+    private func setSavedStationsError(_ error: Error) {
+        savedStationsState = .error(savedStations, error)
+    }
+    
+    private func setSavedStations(_ stations: [Station]) {
+        savedStations = stations
+        savedStationsState = .loaded(stations)
+    }
+    
+    func addFavorite(_ newFavorite: Station) {
+        savedStationsService.add(station: newFavorite)
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure(let error) = completion {
+                    DispatchQueue.main.async {
+                        guard let self = self else { return }
+                        self.setSavedStationsError(error)
+                    }
+                }
+            }, receiveValue: { [weak self] _ in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.getSavedStations()
+                }
+            })
+            .store(in: &cancellables)
+    }
+    
+    func removeFavorite(station: Station) {
+        savedStationsService.remove(stations: [station])
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure(let error) = completion {
+                    DispatchQueue.main.async {
+                        guard let self = self else { return }
+                        self.setSavedStationsError(error)
+                    }
+                }
+            }, receiveValue: { [weak self] _ in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.getSavedStations()
+                }
+            })
+            .store(in: &cancellables)
     }
 }

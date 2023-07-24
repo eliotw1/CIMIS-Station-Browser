@@ -5,17 +5,28 @@
 //  Created by Eliot Williams on 7/23/23.
 //
 
+import CoreData
 import SwiftUI
 
 @main
 struct CIMISStationBrowserApp: App {
-
+    
     let persistenceController = PersistenceController.shared
-    let servicesProvider = CIMISServices()
+    let context: NSManagedObjectContext
+    var services: ServicesInterface
+    
+    init() {
+        let context = persistenceController.container.viewContext
+        self.context = context
+        services = ServicesContainer(
+            fetchService: FetchStationsService(),
+            savedService: SavedStationService(context: context)
+        )
+    }
     
     var body: some Scene {
         WindowGroup {
-            ContentView(services: servicesProvider)
+            ContentView(services: services)
                 .environment(
                     \.managedObjectContext,
                      persistenceController.container.viewContext

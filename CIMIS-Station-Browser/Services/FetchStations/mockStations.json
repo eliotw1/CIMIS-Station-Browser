@@ -1,0 +1,23 @@
+{
+    "Stations": [
+        {
+            "RegionalOffice":"Mock Region Office",
+            "ZipCodes":[
+                "94612"
+            ],
+            "Name": "MockStation",
+            "HmsLatitude": "37.8053°N",
+            "GroundCover": "Grass",
+            "County": "Alameda",
+            "SitingDesc": "Oakland City Hall Lawn",
+            "Elevation": "10",
+            "ConnectDate": "1\/1\/1900",
+            "StationNbr":"999",
+            "DisconnectDate":"12\/31\/2050",
+            "IsActive":"True",
+            "IsEtoStation":"True",
+            "City":"Oakland",
+            "HmsLongitude": "122.2725°W",
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "Data": {
+        "Providers": [{
+            "Name": "cimis",
+            "Type": "station",
+            "Owner": "water.ca.gov",
+            "Records": [{
+                "Date": "2023-07-23",
+                "Julian": "204",
+                "Station": "254",
+                "Standard": "english",
+                "ZipCodes": "94577, 94579, 94603, 94621, 94502",
+                "Scope": "daily",
+                "DayAirTmpAvg": {
+                    "Value": "63.6",
+                    "Qc": " ",
+                    "Unit": "(F)"
+                },
+                "DayAirTmpMax": {
+                    "Value": "74.5",
+                    "Qc": " ",
+                    "Unit": "(F)"
+                },
+                "DayAirTmpMin": {
+                    "Value": "56",
+                    "Qc": " ",
+                    "Unit": "(F)"
+                },
+                "DayDewPnt": {
+                    "Value": "56.5",
+                    "Qc": " ",
+                    "Unit": "(F)"
+                },
+                "DayAsceEto": {
+                    "Value": "0.2",
+                    "Qc": " ",
+                    "Unit": "(in)"
+                },
+                "DayPrecip": {
+                    "Value": "0",
+                    "Qc": " ",
+                    "Unit": "(in)"
+                },
+                "DayRelHumAvg": {
+                    "Value": "78",
+                    "Qc": " ",
+                    "Unit": "(%)"
+                },
+                "DayRelHumMax": {
+                    "Value": "92",
+                    "Qc": " ",
+                    "Unit": "(%)"
+                },
+                "DayRelHumMin": {
+                    "Value": "61",
+                    "Qc": " ",
+                    "Unit": "(%)"
+                },
+                "DaySoilTmpAvg": {
+                    "Value": "66.5",
+                    "Qc": " ",
+                    "Unit": "(F)"
+                },
+                "DaySolRadAvg": {
+                    "Value": "701",
+                    "Qc": " ",
+                    "Unit": "(Ly/day)"
+                },
+                "DayVapPresAvg": {
+                    "Value": "15.6",
+                    "Qc": " ",
+                    "Unit": "(mBars)"
+                },
+                "DayWindRun": {
+                    "Value": "126.5",
+                    "Qc": " ",
+                    "Unit": "(MPH)"
+                },
+                "DayWindSpdAvg": {
+                    "Value": "5.3",
+                    "Qc": " ",
+                    "Unit": "(MPH)"
+                }
+            }]
+        }]
+    }
+}

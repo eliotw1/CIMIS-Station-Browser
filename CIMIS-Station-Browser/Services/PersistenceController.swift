@@ -1,5 +1,5 @@
 //
-//  Persistence.swift
+//  PersistenceController.swift
 //  CIMIS-Station-Browser
 //
 //  Created by Eliot Williams on 7/23/23.
@@ -31,7 +31,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "CIMIS_Station_Browser")
+        container = NSPersistentContainer(name: "CIMISStationBrowser")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

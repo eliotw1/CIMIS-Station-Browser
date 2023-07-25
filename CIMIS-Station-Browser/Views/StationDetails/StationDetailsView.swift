@@ -12,17 +12,9 @@ struct StationDetailsView: View {
     @ObservedObject var viewModel: StationDetailsViewModel
     
     init(
-        station: Station,
-        savedStationsStore: SavedStationStore,
-        stationsService: FetchStationsServiceInterface,
-        savedStationsService: SavedStationServiceInterface
+        viewModel: StationDetailsViewModel
     ) {
-        self.viewModel = StationDetailsViewModel(
-            station: station,
-            savedStationsStore: savedStationsStore,
-            stationsService: stationsService,
-            savedStationsService: savedStationsService
-        )
+        self.viewModel = viewModel
     }
     
     var body: some View {

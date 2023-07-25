@@ -57,7 +57,7 @@ class StationListViewModel: ObservableObject {
     init(
         stationsService: FetchStationsServiceInterface,
         savedStationsService: SavedStationServiceInterface,
-        savedStationsStore: SavedStationStore = SavedStationStore()
+        savedStationsStore: SavedStationStore
     ) {
         self.savedStationsStore = savedStationsStore
         self.stationsService = stationsService
@@ -68,15 +68,6 @@ class StationListViewModel: ObservableObject {
             self.savedStationsState = .loaded(self.savedStations)
         }.store(in: &cancellables)
         getSavedStations()
-    }
-    
-    func detailView(for station: Station) -> StationDetailsView {
-        StationDetailsView(
-            station: station,
-            savedStationsStore: savedStationsStore,
-            stationsService: stationsService,
-            savedStationsService: savedStationsService
-        )
     }
     
     func cancelRequests() {

@@ -8,33 +8,15 @@
 import CoreData
 import SwiftUI
 
-@main
-struct CIMISStationBrowserApp: App {
-    
-    let persistenceController = PersistenceController.shared
-    let context: NSManagedObjectContext
-    var services: ServicesInterface
-    
-    init() {
-        let context = persistenceController.container.viewContext
-        self.context = context
-        services = ServicesContainer(
-            fetchService: FetchStationsService(),
-            savedService: SavedStationServiceContainer(
-                getService: FetchSavedStationsService(context: context),
-                addService: AddSavedStationService(context: context),
-                removeService: RemoveSavedStationService(context: context)
-            )
-        )
-    }
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView(services: services)
-                .environment(
-                    \.managedObjectContext,
-                     persistenceController.container.viewContext
-                )
-        }
-    }
-}
+//@main
+//struct CIMISStationBrowserApp: App {
+//
+//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//
+//    var body: some Scene {
+//        WindowGroup {
+//            // This is not used, but it's required to satisfy the `some Scene` return type
+//            EmptyView()
+//        }
+//    }
+//}

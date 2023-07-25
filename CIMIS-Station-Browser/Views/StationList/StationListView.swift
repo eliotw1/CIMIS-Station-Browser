@@ -9,33 +9,32 @@ import SwiftUI
 
 struct StationListView: View {
     
-    init(
-        stationsService: FetchStationsServiceInterface,
-        savedStationsService: SavedStationServiceInterface
-    ) {
-        self.viewModel = StationListViewModel(
-            stationsService: stationsService,
-            savedStationsService: savedStationsService
-        )
+    @ObservedObject private var viewModel: StationListViewModel
+    var actions = Actions()
+    
+    struct Actions {
+        var onRowTap: ((Station) -> Void)?
     }
     
-    @ObservedObject private var viewModel: StationListViewModel
+    init(
+        viewModel: StationListViewModel
+    ) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-        NavigationView {
-            content
-                .navigationTitle("CIMIS Stations")
-                .navigationBarItems(
-                    trailing:
-                        Button(action: {
-                            viewModel.getAllStations()
-                        }, label: {
-                            Image(systemName: "arrow.clockwise")
-                        })
-                        .disabled(!isRefreshButtonEnabled)
-                )
-                .onAppear(perform: didAppear)
-        }
+        content
+            .navigationTitle("CIMIS Stations")
+            .navigationBarItems(
+                trailing:
+                    Button(action: {
+                        viewModel.getAllStations()
+                    }, label: {
+                        Image(systemName: "arrow.clockwise")
+                    })
+                    .disabled(!isRefreshButtonEnabled)
+            )
+            .onAppear(perform: didAppear)
     }
     
     @ViewBuilder
@@ -140,14 +139,16 @@ internal extension StationListView {
                 systemName: viewModel.isSaved(station)
                 ? "bookmark.fill"
                 : "bookmark")
-            .onTapGesture { viewModel.toggleSaved(station) }
-            NavigationLink(
-                destination: viewModel.detailView(for: station),
-                tag: station,
-                selection: $viewModel.activeStation)
-            {
-                VStack(alignment: .leading) {
+            .onTapGesture {
+                viewModel.toggleSaved(station)
+            }
+            Button(action: {
+                actions.onRowTap?(station)
+            }) {
+                HStack {
                     Text(station.name + ":  #\(station.number)")
+                    Spacer()
+                    Image(systemName: "chevron.right")
                 }
             }
         }
@@ -211,23 +212,3 @@ extension Station {
         self.zipCodes = zipCodes.components(separatedBy: ",")
     }
 }
-
-#if DEBUG
-struct StationListView_Previews: PreviewProvider {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    static var previews: some View {
-        Group {
-            StationListView(
-                stationsService: MockFetchStationsService(),
-                savedStationsService: SavedStationServiceContainer(
-                    getService: FetchSavedStationsService(context: PersistenceController.preview.container.viewContext),
-                    addService: AddSavedStationService(context: PersistenceController.preview.container.viewContext),
-                    removeService: RemoveSavedStationService(context: PersistenceController.preview.container.viewContext)
-                )
-            )
-        }
-    }
-}
-#endif

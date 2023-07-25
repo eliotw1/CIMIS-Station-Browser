@@ -19,7 +19,7 @@ struct StationsResponse: Codable {
     }
 }
 
-struct Station: Codable {
+struct Station: Codable, Hashable {
     
     enum CodingKeys: String, CodingKey {
         case number = "StationNbr"

@@ -35,10 +35,15 @@ class StationListViewModel: ObservableObject {
         }
     }
     
-    @Published var savedStationsState = SavedStationsState.initial
-    @Published var stationsState = StationsServiceState.initial
+    @Published var activeStation: Station? = nil
+    @Published private(set) var savedStationsState = SavedStationsState.initial
+    @Published private(set) var stationsState = StationsServiceState.initial
     
-    private var savedStations = [Station]()
+    private let savedStationsStore: SavedStationStore
+    
+    private var savedStations: [Station] {
+        Array(savedStationsStore.savedStations)
+    }
     
     private var allStations = [Station]()
     private var activeStations: [Station] {
@@ -51,15 +56,46 @@ class StationListViewModel: ObservableObject {
     
     init(
         stationsService: FetchStationsServiceInterface,
-        savedStationsService: SavedStationServiceInterface
+        savedStationsService: SavedStationServiceInterface,
+        savedStationsStore: SavedStationStore = SavedStationStore()
     ) {
+        self.savedStationsStore = savedStationsStore
         self.stationsService = stationsService
         self.savedStationsService = savedStationsService
+        
+        savedStationsStore.savedStationsChanged.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.savedStationsState = .loaded(self.savedStations)
+        }.store(in: &cancellables)
         getSavedStations()
+    }
+    
+    func detailView(for station: Station) -> StationDetailsView {
+        StationDetailsView(
+            station: station,
+            savedStationsStore: savedStationsStore,
+            stationsService: stationsService,
+            savedStationsService: savedStationsService
+        )
     }
     
     func cancelRequests() {
         cancellables.forEach { $0.cancel() }
+    }
+}
+
+// MARK: Station Details
+extension StationListViewModel {
+    func isSaved(_ station: Station) -> Bool {
+        savedStations.contains(where: { $0.number == station.number })
+    }
+    
+    func toggleSaved(_ station: Station) {
+        if isSaved(station) {
+            removeFavorite(station: station)
+        } else {
+            addFavorite(station)
+        }
     }
 }
 
@@ -120,8 +156,7 @@ extension StationListViewModel {
     }
     
     private func setSavedStations(_ stations: [Station]) {
-        savedStations = stations
-        savedStationsState = .loaded(stations)
+        savedStationsStore.savedStations = Set(stations)
     }
     
     func addFavorite(_ newFavorite: Station) {

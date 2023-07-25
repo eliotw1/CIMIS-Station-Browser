@@ -127,7 +127,7 @@ internal extension StationListView {
 
     func activeStations(_ stations: [Station]) -> some View {
         ForEach(
-            stations.filter({ !isSaved($0) }),
+            stations.filter({ !viewModel.isSaved($0) }),
             id: \.number
         ) { station in
             stationRow(station)
@@ -137,19 +137,15 @@ internal extension StationListView {
     func stationRow(_ station: Station) -> some View {
         HStack(spacing: 16.0) {
             Image(
-                systemName: isSaved(station)
+                systemName: viewModel.isSaved(station)
                 ? "bookmark.fill"
                 : "bookmark")
-                .onTapGesture { toggleSaved(station) }
-            NavigationLink {
-                VStack {
-                    Text(station.name)
-                    Text("Station #\(station.number)")
-                    if !station.zipCodes.isEmpty {
-                        Text("Supported Zip Codes: " + station.zipCodes.joined(separator: ", "))
-                    }
-                }
-            } label: {
+            .onTapGesture { viewModel.toggleSaved(station) }
+            NavigationLink(
+                destination: viewModel.detailView(for: station),
+                tag: station,
+                selection: $viewModel.activeStation)
+            {
                 VStack(alignment: .leading) {
                     Text(station.name + ":  #\(station.number)")
                 }
@@ -214,59 +210,6 @@ extension Station {
         self.sitingDesc = sitingDesc
         self.zipCodes = zipCodes.components(separatedBy: ",")
     }
-}
-
-internal extension StationListView {
-    
-    func isSaved(_ station: Station) -> Bool {
-        viewModel.savedStationsState.savedStations.contains(where: { $0.number == station.number })
-    }
-    
-    func toggleSaved(_ station: Station) {
-        if isSaved(station) {
-            viewModel.removeFavorite(station: station)
-//            removeFavorite(stationNumber: station.number)
-        } else {
-//            addFavorite(station)
-            viewModel.addFavorite(station)
-        }
-    }
-    
-//    private func addFavorite(_ station: Station) {
-//        withAnimation {
-//            savedStations
-//                .filter { $0.number == station.number }
-//                .forEach(viewContext.delete(_:))
-//            let newFavorite = StationEntity(context: viewContext)
-//            newFavorite.update(with: station)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//
-//    private func removeFavorite(stationNumber: String) {
-//        withAnimation {
-//            savedStations
-//                .filter { $0.number == stationNumber }
-//                .forEach(viewContext.delete(_:))
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
 }
 
 #if DEBUG

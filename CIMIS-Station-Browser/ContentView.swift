@@ -28,7 +28,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
             services: ServicesContainer(
-                fetchService: MockSuccessfulStationsService(),
+                fetchService: MockFetchStationsService(),
                 savedService: SavedStationServiceContainer(
                     getService: FetchSavedStationsService(context: PersistenceController.preview.container.viewContext),
                     addService: AddSavedStationService(context: PersistenceController.preview.container.viewContext),

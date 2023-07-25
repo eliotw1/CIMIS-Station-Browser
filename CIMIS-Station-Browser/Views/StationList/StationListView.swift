@@ -277,7 +277,7 @@ struct StationListView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             StationListView(
-                stationsService: MockSuccessfulStationsService(),
+                stationsService: MockFetchStationsService(),
                 savedStationsService: SavedStationServiceContainer(
                     getService: FetchSavedStationsService(context: PersistenceController.preview.container.viewContext),
                     addService: AddSavedStationService(context: PersistenceController.preview.container.viewContext),

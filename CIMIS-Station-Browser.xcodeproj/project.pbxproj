@@ -8,33 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		7311F0832A6F2B68003316B3 /* SavedStationServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F0822A6F2B68003316B3 /* SavedStationServiceContainer.swift */; };
-		7311F0862A6F3461003316B3 /* station-254.json in Resources */ = {isa = PBXBuildFile; fileRef = 7311F0852A6F3461003316B3 /* station-254.json */; };
-		7311F0882A6F34A0003316B3 /* all-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7311F0872A6F34A0003316B3 /* all-stations.json */; };
-		7311F08A2A6F35AC003316B3 /* station-213.json in Resources */ = {isa = PBXBuildFile; fileRef = 7311F0892A6F35AC003316B3 /* station-213.json */; };
-		7311F08C2A6F42DA003316B3 /* MockSavedStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F08B2A6F42DA003316B3 /* MockSavedStationService.swift */; };
+		7311F0862A6F3461003316B3 /* station254.json in Resources */ = {isa = PBXBuildFile; fileRef = 7311F0852A6F3461003316B3 /* station254.json */; };
+		7311F0882A6F34A0003316B3 /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7311F0872A6F34A0003316B3 /* allStations.json */; };
+		7311F08A2A6F35AC003316B3 /* station213.json in Resources */ = {isa = PBXBuildFile; fileRef = 7311F0892A6F35AC003316B3 /* station213.json */; };
 		7311F08E2A6F4880003316B3 /* ServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F08D2A6F4880003316B3 /* ServicesContainer.swift */; };
 		7311F0902A6F4AF9003316B3 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F08F2A6F4AF9003316B3 /* ServiceError.swift */; };
 		7311F0922A6F4B4F003316B3 /* SavedStationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F0912A6F4B4F003316B3 /* SavedStationServiceInterface.swift */; };
 		7311F0942A6F4B88003316B3 /* FetchStationsServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F0932A6F4B88003316B3 /* FetchStationsServiceInterface.swift */; };
 		7311F0962A6F4FF0003316B3 /* FetchSavedStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F0952A6F4FF0003316B3 /* FetchSavedStationService.swift */; };
+		731F1E4C2A6F7A6E003DD16F /* AddSavedStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F1E4B2A6F7A6D003DD16F /* AddSavedStationService.swift */; };
+		731F1E4E2A6F7AD1003DD16F /* RemoveSavedStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F1E4D2A6F7AD1003DD16F /* RemoveSavedStationService.swift */; };
+		731F1E512A6F7B9A003DD16F /* ServiceContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F1E502A6F7B9A003DD16F /* ServiceContainerTests.swift */; };
+		731F1E532A6F7D8D003DD16F /* MockSavedStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F1E522A6F7D8D003DD16F /* MockSavedStationsService.swift */; };
 		7323289F2A6DB91F000EF095 /* CIMISStationBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */; };
 		732328A12A6DB91F000EF095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A02A6DB91F000EF095 /* ContentView.swift */; };
 		732328A32A6DB924000EF095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A22A6DB924000EF095 /* Assets.xcassets */; };
 		732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A52A6DB924000EF095 /* Preview Assets.xcassets */; };
 		732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A72A6DB924000EF095 /* PersistenceController.swift */; };
 		732328AB2A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732328A92A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld */; };
-		732328B52A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */; };
-		732328BF2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */; };
-		732328C12A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */; };
+		732328BF2A6DB924000EF095 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		732328CE2A6DC190000EF095 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328CD2A6DC190000EF095 /* Networking.swift */; };
 		732328D02A6DC1CF000EF095 /* StationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328CF2A6DC1CF000EF095 /* StationModels.swift */; };
 		732328D32A6DC316000EF095 /* StationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328D22A6DC316000EF095 /* StationListView.swift */; };
 		732328DA2A6DD606000EF095 /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328D92A6DD606000EF095 /* StationListViewModel.swift */; };
 		732328DC2A6E2123000EF095 /* FetchStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328DB2A6E2123000EF095 /* FetchStationsService.swift */; };
 		732328DE2A6E25B2000EF095 /* ServicesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328DD2A6E25B2000EF095 /* ServicesInterface.swift */; };
-		732328E12A6E2779000EF095 /* MockStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E02A6E2779000EF095 /* MockStationsService.swift */; };
-		732328E32A6E2840000EF095 /* mock-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 732328E22A6E2840000EF095 /* mock-stations.json */; };
+		732328E12A6E2779000EF095 /* MockFetchStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E02A6E2779000EF095 /* MockFetchStationsService.swift */; };
+		732328E32A6E2840000EF095 /* mockStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 732328E22A6E2840000EF095 /* mockStations.json */; };
 		732328E52A6E2E46000EF095 /* MockNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E42A6E2E46000EF095 /* MockNetworking.swift */; };
+		73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,15 +58,18 @@
 
 /* Begin PBXFileReference section */
 		7311F0822A6F2B68003316B3 /* SavedStationServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStationServiceContainer.swift; sourceTree = "<group>"; };
-		7311F0852A6F3461003316B3 /* station-254.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "station-254.json"; sourceTree = "<group>"; };
-		7311F0872A6F34A0003316B3 /* all-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "all-stations.json"; sourceTree = "<group>"; };
-		7311F0892A6F35AC003316B3 /* station-213.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "station-213.json"; sourceTree = "<group>"; };
-		7311F08B2A6F42DA003316B3 /* MockSavedStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSavedStationService.swift; sourceTree = "<group>"; };
+		7311F0852A6F3461003316B3 /* station254.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = station254.json; sourceTree = "<group>"; };
+		7311F0872A6F34A0003316B3 /* allStations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
+		7311F0892A6F35AC003316B3 /* station213.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = station213.json; sourceTree = "<group>"; };
 		7311F08D2A6F4880003316B3 /* ServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesContainer.swift; sourceTree = "<group>"; };
 		7311F08F2A6F4AF9003316B3 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		7311F0912A6F4B4F003316B3 /* SavedStationServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStationServiceInterface.swift; sourceTree = "<group>"; };
 		7311F0932A6F4B88003316B3 /* FetchStationsServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStationsServiceInterface.swift; sourceTree = "<group>"; };
 		7311F0952A6F4FF0003316B3 /* FetchSavedStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSavedStationService.swift; sourceTree = "<group>"; };
+		731F1E4B2A6F7A6D003DD16F /* AddSavedStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSavedStationService.swift; sourceTree = "<group>"; };
+		731F1E4D2A6F7AD1003DD16F /* RemoveSavedStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSavedStationService.swift; sourceTree = "<group>"; };
+		731F1E502A6F7B9A003DD16F /* ServiceContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainerTests.swift; sourceTree = "<group>"; };
+		731F1E522A6F7D8D003DD16F /* MockSavedStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSavedStationsService.swift; sourceTree = "<group>"; };
 		7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIMIS-Station-Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMISStationBrowserApp.swift; sourceTree = "<group>"; };
 		732328A02A6DB91F000EF095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,19 +78,17 @@
 		732328A72A6DB924000EF095 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CIMIS_Station_Browser.xcdatamodel; sourceTree = "<group>"; };
 		732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserTests.swift; sourceTree = "<group>"; };
 		732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
-		732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMIS_Station_BrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		732328CD2A6DC190000EF095 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		732328CF2A6DC1CF000EF095 /* StationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModels.swift; sourceTree = "<group>"; };
 		732328D22A6DC316000EF095 /* StationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListView.swift; sourceTree = "<group>"; };
 		732328D92A6DD606000EF095 /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
 		732328DB2A6E2123000EF095 /* FetchStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStationsService.swift; sourceTree = "<group>"; };
 		732328DD2A6E25B2000EF095 /* ServicesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesInterface.swift; sourceTree = "<group>"; };
-		732328E02A6E2779000EF095 /* MockStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStationsService.swift; sourceTree = "<group>"; };
-		732328E22A6E2840000EF095 /* mock-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mock-stations.json"; sourceTree = "<group>"; };
+		732328E02A6E2779000EF095 /* MockFetchStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchStationsService.swift; sourceTree = "<group>"; };
+		732328E22A6E2840000EF095 /* mockStations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockStations.json; sourceTree = "<group>"; };
 		732328E42A6E2E46000EF095 /* MockNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworking.swift; sourceTree = "<group>"; };
+		73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIMIS_Station_BrowserUITests.swift; path = ../../../.Trash/CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +119,12 @@
 		7311F07D2A6F1B20003316B3 /* SavedStations */ = {
 			isa = PBXGroup;
 			children = (
+				731F1E4B2A6F7A6D003DD16F /* AddSavedStationService.swift */,
+				7311F0952A6F4FF0003316B3 /* FetchSavedStationService.swift */,
+				731F1E4D2A6F7AD1003DD16F /* RemoveSavedStationService.swift */,
 				7311F0912A6F4B4F003316B3 /* SavedStationServiceInterface.swift */,
 				7311F0822A6F2B68003316B3 /* SavedStationServiceContainer.swift */,
-				7311F08B2A6F42DA003316B3 /* MockSavedStationService.swift */,
-				7311F0952A6F4FF0003316B3 /* FetchSavedStationService.swift */,
+				731F1E522A6F7D8D003DD16F /* MockSavedStationsService.swift */,
 			);
 			path = SavedStations;
 			sourceTree = "<group>";
@@ -127,10 +132,18 @@
 		7311F0842A6F3411003316B3 /* GetStationData */ = {
 			isa = PBXGroup;
 			children = (
-				7311F0852A6F3461003316B3 /* station-254.json */,
-				7311F0892A6F35AC003316B3 /* station-213.json */,
+				7311F0852A6F3461003316B3 /* station254.json */,
+				7311F0892A6F35AC003316B3 /* station213.json */,
 			);
 			path = GetStationData;
+			sourceTree = "<group>";
+		};
+		731F1E4F2A6F7B6D003DD16F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				731F1E502A6F7B9A003DD16F /* ServiceContainerTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		732328922A6DB91F000EF095 = {
@@ -179,7 +192,7 @@
 		732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				732328B42A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift */,
+				731F1E4F2A6F7B6D003DD16F /* Services */,
 			);
 			path = "CIMIS-Station-BrowserTests";
 			sourceTree = "<group>";
@@ -187,8 +200,7 @@
 		732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */ = {
 			isa = PBXGroup;
 			children = (
-				732328BE2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift */,
-				732328C02A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift */,
+				73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */,
 			);
 			path = "CIMIS-Station-BrowserUITests";
 			sourceTree = "<group>";
@@ -239,9 +251,9 @@
 			children = (
 				7311F0932A6F4B88003316B3 /* FetchStationsServiceInterface.swift */,
 				732328DB2A6E2123000EF095 /* FetchStationsService.swift */,
-				732328E02A6E2779000EF095 /* MockStationsService.swift */,
-				732328E22A6E2840000EF095 /* mock-stations.json */,
-				7311F0872A6F34A0003316B3 /* all-stations.json */,
+				732328E02A6E2779000EF095 /* MockFetchStationsService.swift */,
+				732328E22A6E2840000EF095 /* mockStations.json */,
+				7311F0872A6F34A0003316B3 /* allStations.json */,
 			);
 			path = FetchStations;
 			sourceTree = "<group>";
@@ -321,6 +333,7 @@
 					};
 					732328B92A6DB924000EF095 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = 7323289A2A6DB91F000EF095;
 					};
 				};
@@ -351,11 +364,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */,
-				732328E32A6E2840000EF095 /* mock-stations.json in Resources */,
-				7311F0862A6F3461003316B3 /* station-254.json in Resources */,
-				7311F0882A6F34A0003316B3 /* all-stations.json in Resources */,
+				732328E32A6E2840000EF095 /* mockStations.json in Resources */,
+				7311F0862A6F3461003316B3 /* station254.json in Resources */,
+				7311F0882A6F34A0003316B3 /* allStations.json in Resources */,
 				732328A32A6DB924000EF095 /* Assets.xcassets in Resources */,
-				7311F08A2A6F35AC003316B3 /* station-213.json in Resources */,
+				7311F08A2A6F35AC003316B3 /* station213.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732328E12A6E2779000EF095 /* MockStationsService.swift in Sources */,
+				732328E12A6E2779000EF095 /* MockFetchStationsService.swift in Sources */,
 				732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */,
+				731F1E4C2A6F7A6E003DD16F /* AddSavedStationService.swift in Sources */,
 				732328CE2A6DC190000EF095 /* Networking.swift in Sources */,
 				732328A12A6DB91F000EF095 /* ContentView.swift in Sources */,
 				7311F0832A6F2B68003316B3 /* SavedStationServiceContainer.swift in Sources */,
@@ -394,11 +408,12 @@
 				7311F0902A6F4AF9003316B3 /* ServiceError.swift in Sources */,
 				7311F08E2A6F4880003316B3 /* ServicesContainer.swift in Sources */,
 				732328D32A6DC316000EF095 /* StationListView.swift in Sources */,
-				7311F08C2A6F42DA003316B3 /* MockSavedStationService.swift in Sources */,
 				732328DA2A6DD606000EF095 /* StationListViewModel.swift in Sources */,
 				7323289F2A6DB91F000EF095 /* CIMISStationBrowserApp.swift in Sources */,
 				732328DE2A6E25B2000EF095 /* ServicesInterface.swift in Sources */,
+				731F1E532A6F7D8D003DD16F /* MockSavedStationsService.swift in Sources */,
 				732328AB2A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld in Sources */,
+				731F1E4E2A6F7AD1003DD16F /* RemoveSavedStationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732328B52A6DB924000EF095 /* CIMIS_Station_BrowserTests.swift in Sources */,
+				731F1E512A6F7B9A003DD16F /* ServiceContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,8 +429,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732328C12A6DB924000EF095 /* CIMIS_Station_BrowserUITestsLaunchTests.swift in Sources */,
-				732328BF2A6DB924000EF095 /* CIMIS_Station_BrowserUITests.swift in Sources */,
+				732328BF2A6DB924000EF095 /* (null) in Sources */,
+				73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,13 +662,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "CIMIS-Station-Browser";
@@ -664,9 +686,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

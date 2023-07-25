@@ -13,6 +13,10 @@ struct StationsResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case stations = "Stations"
     }
+    
+    init(stations: [Station]) {
+        self.stations = stations
+    }
 }
 
 struct Station: Codable {
@@ -66,6 +70,32 @@ struct Station: Codable {
         self.isActive = isActiveString.lowercased() == "true"
         self.isEtoStation = isEtoStationString.lowercased() == "true"
         self.elevation = Int(elevationString) ?? 0
+        self.groundCover = groundCover
+        self.hmsLatitude = hmsLatitude
+        self.hmsLongitude = hmsLongitude
+        self.sitingDesc = sitingDesc
+        self.zipCodes = zipCodes
+    }
+    
+    init(
+        number: String,
+        name: String,
+        city: String,
+        isActive: Bool,
+        isEtoStation: Bool,
+        elevation: Int,
+        groundCover: String,
+        hmsLatitude: String,
+        hmsLongitude: String,
+        sitingDesc: String,
+        zipCodes: [String]
+    ) {
+        self.number = number
+        self.name = name
+        self.city = city
+        self.isActive = isActive
+        self.isEtoStation = isEtoStation
+        self.elevation = elevation
         self.groundCover = groundCover
         self.hmsLatitude = hmsLatitude
         self.hmsLongitude = hmsLongitude

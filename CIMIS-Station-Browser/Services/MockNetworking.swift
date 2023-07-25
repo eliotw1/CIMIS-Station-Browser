@@ -12,7 +12,7 @@ struct MockNetworking {
     
     static func mockResponse<T: Decodable>(
         from filename: String,
-        delay: TimeInterval = 0.5) -> AnyPublisher<T, Error>
+        delay: TimeInterval = 0.0) -> AnyPublisher<T, Error>
     {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json"),
               let data = try? Data(contentsOf: url),

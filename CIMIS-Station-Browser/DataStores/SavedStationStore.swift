@@ -7,6 +7,9 @@
 
 import Combine
 
+/// A Data Store for Saved Stations
+/// - Parameter savedStationsChanged: A `PassthroughSubject<Void, Never>` to observe changes to the store.
+/// - Parameter savedStations: A set of saved `Station` models to be observed.
 class SavedStationStore: ObservableObject {
     
     var savedStationsChanged = PassthroughSubject<Void, Never>()

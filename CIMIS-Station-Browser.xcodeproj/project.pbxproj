@@ -21,7 +21,6 @@
 		731F1E512A6F7B9A003DD16F /* ServiceContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F1E502A6F7B9A003DD16F /* ServiceContainerTests.swift */; };
 		731F1E532A6F7D8D003DD16F /* MockSavedStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F1E522A6F7D8D003DD16F /* MockSavedStationsService.swift */; };
 		7323289F2A6DB91F000EF095 /* CIMISStationBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */; };
-		732328A12A6DB91F000EF095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A02A6DB91F000EF095 /* ContentView.swift */; };
 		732328A32A6DB924000EF095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A22A6DB924000EF095 /* Assets.xcassets */; };
 		732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A52A6DB924000EF095 /* Preview Assets.xcassets */; };
 		732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A72A6DB924000EF095 /* PersistenceController.swift */; };
@@ -36,6 +35,15 @@
 		732328E12A6E2779000EF095 /* MockFetchStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E02A6E2779000EF095 /* MockFetchStationsService.swift */; };
 		732328E32A6E2840000EF095 /* mockStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 732328E22A6E2840000EF095 /* mockStations.json */; };
 		732328E52A6E2E46000EF095 /* MockNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328E42A6E2E46000EF095 /* MockNetworking.swift */; };
+		73C691542A6F8FF300120571 /* StationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691532A6F8FF300120571 /* StationDetailsView.swift */; };
+		73C691562A6F900600120571 /* StationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691552A6F900600120571 /* StationDetailsViewModel.swift */; };
+		73C691592A6F9D8C00120571 /* SavedStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691582A6F9D8C00120571 /* SavedStationStore.swift */; };
+		73C6915B2A6FACB300120571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6915A2A6FACB200120571 /* AppDelegate.swift */; };
+		73C6915D2A6FACFE00120571 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6915C2A6FACFE00120571 /* AppRouter.swift */; };
+		73C6919E2A70607600120571 /* StationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6919D2A70607600120571 /* StationListController.swift */; };
+		73C691A02A706B2600120571 /* StationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6919F2A706B2600120571 /* StationDetailController.swift */; };
+		73C691A32A706DEC00120571 /* StationListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A22A706DEC00120571 /* StationListTests.swift */; };
+		73C691A62A70845700120571 /* StationDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A52A70845700120571 /* StationDetailsTests.swift */; };
 		73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +80,6 @@
 		731F1E522A6F7D8D003DD16F /* MockSavedStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSavedStationsService.swift; sourceTree = "<group>"; };
 		7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIMIS-Station-Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMISStationBrowserApp.swift; sourceTree = "<group>"; };
-		732328A02A6DB91F000EF095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		732328A22A6DB924000EF095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		732328A52A6DB924000EF095 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		732328A72A6DB924000EF095 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -88,6 +95,15 @@
 		732328E02A6E2779000EF095 /* MockFetchStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchStationsService.swift; sourceTree = "<group>"; };
 		732328E22A6E2840000EF095 /* mockStations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockStations.json; sourceTree = "<group>"; };
 		732328E42A6E2E46000EF095 /* MockNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworking.swift; sourceTree = "<group>"; };
+		73C691532A6F8FF300120571 /* StationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsView.swift; sourceTree = "<group>"; };
+		73C691552A6F900600120571 /* StationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsViewModel.swift; sourceTree = "<group>"; };
+		73C691582A6F9D8C00120571 /* SavedStationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStationStore.swift; sourceTree = "<group>"; };
+		73C6915A2A6FACB200120571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		73C6915C2A6FACFE00120571 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		73C6919D2A70607600120571 /* StationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListController.swift; sourceTree = "<group>"; };
+		73C6919F2A706B2600120571 /* StationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailController.swift; sourceTree = "<group>"; };
+		73C691A22A706DEC00120571 /* StationListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTests.swift; sourceTree = "<group>"; };
+		73C691A52A70845700120571 /* StationDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsTests.swift; sourceTree = "<group>"; };
 		73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIMIS_Station_BrowserUITests.swift; path = ../../../.Trash/CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,9 +185,11 @@
 		7323289D2A6DB91F000EF095 /* CIMIS-Station-Browser */ = {
 			isa = PBXGroup;
 			children = (
+				73C691572A6F9D5B00120571 /* DataStores */,
 				732328D12A6DC2F8000EF095 /* Views */,
 				7323289E2A6DB91F000EF095 /* CIMISStationBrowserApp.swift */,
-				732328A02A6DB91F000EF095 /* ContentView.swift */,
+				73C6915A2A6FACB200120571 /* AppDelegate.swift */,
+				73C6915C2A6FACFE00120571 /* AppRouter.swift */,
 				732328A22A6DB924000EF095 /* Assets.xcassets */,
 				732328D72A6DCA37000EF095 /* Models */,
 				732328D62A6DC510000EF095 /* Services */,
@@ -192,6 +210,8 @@
 		732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				73C691A42A70843C00120571 /* StationDetails */,
+				73C691A12A706DCF00120571 /* StationList */,
 				731F1E4F2A6F7B6D003DD16F /* Services */,
 			);
 			path = "CIMIS-Station-BrowserTests";
@@ -208,6 +228,7 @@
 		732328D12A6DC2F8000EF095 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				73C691522A6F8FD600120571 /* StationDetails */,
 				732328D82A6DD5F7000EF095 /* StationList */,
 			);
 			path = Views;
@@ -242,6 +263,7 @@
 			children = (
 				732328D22A6DC316000EF095 /* StationListView.swift */,
 				732328D92A6DD606000EF095 /* StationListViewModel.swift */,
+				73C6919D2A70607600120571 /* StationListController.swift */,
 			);
 			path = StationList;
 			sourceTree = "<group>";
@@ -256,6 +278,40 @@
 				7311F0872A6F34A0003316B3 /* allStations.json */,
 			);
 			path = FetchStations;
+			sourceTree = "<group>";
+		};
+		73C691522A6F8FD600120571 /* StationDetails */ = {
+			isa = PBXGroup;
+			children = (
+				73C691532A6F8FF300120571 /* StationDetailsView.swift */,
+				73C691552A6F900600120571 /* StationDetailsViewModel.swift */,
+				73C6919F2A706B2600120571 /* StationDetailController.swift */,
+			);
+			path = StationDetails;
+			sourceTree = "<group>";
+		};
+		73C691572A6F9D5B00120571 /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				73C691582A6F9D8C00120571 /* SavedStationStore.swift */,
+			);
+			path = DataStores;
+			sourceTree = "<group>";
+		};
+		73C691A12A706DCF00120571 /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				73C691A22A706DEC00120571 /* StationListTests.swift */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
+		73C691A42A70843C00120571 /* StationDetails */ = {
+			isa = PBXGroup;
+			children = (
+				73C691A52A70845700120571 /* StationDetailsTests.swift */,
+			);
+			path = StationDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,16 +450,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				732328E12A6E2779000EF095 /* MockFetchStationsService.swift in Sources */,
+				73C691A02A706B2600120571 /* StationDetailController.swift in Sources */,
 				732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */,
 				731F1E4C2A6F7A6E003DD16F /* AddSavedStationService.swift in Sources */,
 				732328CE2A6DC190000EF095 /* Networking.swift in Sources */,
-				732328A12A6DB91F000EF095 /* ContentView.swift in Sources */,
 				7311F0832A6F2B68003316B3 /* SavedStationServiceContainer.swift in Sources */,
 				7311F0942A6F4B88003316B3 /* FetchStationsServiceInterface.swift in Sources */,
 				7311F0922A6F4B4F003316B3 /* SavedStationServiceInterface.swift in Sources */,
 				7311F0962A6F4FF0003316B3 /* FetchSavedStationService.swift in Sources */,
 				732328D02A6DC1CF000EF095 /* StationModels.swift in Sources */,
+				73C6915D2A6FACFE00120571 /* AppRouter.swift in Sources */,
 				732328E52A6E2E46000EF095 /* MockNetworking.swift in Sources */,
+				73C691562A6F900600120571 /* StationDetailsViewModel.swift in Sources */,
+				73C691592A6F9D8C00120571 /* SavedStationStore.swift in Sources */,
+				73C6919E2A70607600120571 /* StationListController.swift in Sources */,
+				73C6915B2A6FACB300120571 /* AppDelegate.swift in Sources */,
 				732328DC2A6E2123000EF095 /* FetchStationsService.swift in Sources */,
 				7311F0902A6F4AF9003316B3 /* ServiceError.swift in Sources */,
 				7311F08E2A6F4880003316B3 /* ServicesContainer.swift in Sources */,
@@ -411,6 +472,7 @@
 				732328DA2A6DD606000EF095 /* StationListViewModel.swift in Sources */,
 				7323289F2A6DB91F000EF095 /* CIMISStationBrowserApp.swift in Sources */,
 				732328DE2A6E25B2000EF095 /* ServicesInterface.swift in Sources */,
+				73C691542A6F8FF300120571 /* StationDetailsView.swift in Sources */,
 				731F1E532A6F7D8D003DD16F /* MockSavedStationsService.swift in Sources */,
 				732328AB2A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld in Sources */,
 				731F1E4E2A6F7AD1003DD16F /* RemoveSavedStationService.swift in Sources */,
@@ -421,6 +483,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C691A32A706DEC00120571 /* StationListTests.swift in Sources */,
+				73C691A62A70845700120571 /* StationDetailsTests.swift in Sources */,
 				731F1E512A6F7B9A003DD16F /* ServiceContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,11 +638,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CIMIS-Station-Browser/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationRequiresIphoneEnvironment = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,11 +665,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CIMIS-Station-Browser/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

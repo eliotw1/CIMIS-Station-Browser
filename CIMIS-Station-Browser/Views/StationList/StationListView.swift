@@ -9,33 +9,32 @@ import SwiftUI
 
 struct StationListView: View {
     
-    init(
-        stationsService: FetchStationsServiceInterface,
-        savedStationsService: SavedStationServiceInterface
-    ) {
-        self.viewModel = StationListViewModel(
-            stationsService: stationsService,
-            savedStationsService: savedStationsService
-        )
+    @ObservedObject private var viewModel: StationListViewModel
+    var actions = Actions()
+    
+    struct Actions {
+        var onRowTap: ((Station) -> Void)?
     }
     
-    @ObservedObject private var viewModel: StationListViewModel
+    init(
+        viewModel: StationListViewModel
+    ) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-        NavigationView {
-            content
-                .navigationTitle("CIMIS Stations")
-                .navigationBarItems(
-                    trailing:
-                        Button(action: {
-                            viewModel.getAllStations()
-                        }, label: {
-                            Image(systemName: "arrow.clockwise")
-                        })
-                        .disabled(!isRefreshButtonEnabled)
-                )
-                .onAppear(perform: didAppear)
-        }
+        content
+            .navigationTitle("CIMIS Stations")
+            .navigationBarItems(
+                trailing:
+                    Button(action: {
+                        viewModel.getAllStations()
+                    }, label: {
+                        Image(systemName: "arrow.clockwise")
+                    })
+                    .disabled(!isRefreshButtonEnabled)
+            )
+            .onAppear(perform: didAppear)
     }
     
     @ViewBuilder
@@ -127,7 +126,7 @@ internal extension StationListView {
 
     func activeStations(_ stations: [Station]) -> some View {
         ForEach(
-            stations.filter({ !isSaved($0) }),
+            stations.filter({ !viewModel.isSaved($0) }),
             id: \.number
         ) { station in
             stationRow(station)
@@ -137,21 +136,19 @@ internal extension StationListView {
     func stationRow(_ station: Station) -> some View {
         HStack(spacing: 16.0) {
             Image(
-                systemName: isSaved(station)
+                systemName: viewModel.isSaved(station)
                 ? "bookmark.fill"
                 : "bookmark")
-                .onTapGesture { toggleSaved(station) }
-            NavigationLink {
-                VStack {
-                    Text(station.name)
-                    Text("Station #\(station.number)")
-                    if !station.zipCodes.isEmpty {
-                        Text("Supported Zip Codes: " + station.zipCodes.joined(separator: ", "))
-                    }
-                }
-            } label: {
-                VStack(alignment: .leading) {
+            .onTapGesture {
+                viewModel.toggleSaved(station)
+            }
+            Button(action: {
+                actions.onRowTap?(station)
+            }) {
+                HStack {
                     Text(station.name + ":  #\(station.number)")
+                    Spacer()
+                    Image(systemName: "chevron.right")
                 }
             }
         }
@@ -215,76 +212,3 @@ extension Station {
         self.zipCodes = zipCodes.components(separatedBy: ",")
     }
 }
-
-internal extension StationListView {
-    
-    func isSaved(_ station: Station) -> Bool {
-        viewModel.savedStationsState.savedStations.contains(where: { $0.number == station.number })
-    }
-    
-    func toggleSaved(_ station: Station) {
-        if isSaved(station) {
-            viewModel.removeFavorite(station: station)
-//            removeFavorite(stationNumber: station.number)
-        } else {
-//            addFavorite(station)
-            viewModel.addFavorite(station)
-        }
-    }
-    
-//    private func addFavorite(_ station: Station) {
-//        withAnimation {
-//            savedStations
-//                .filter { $0.number == station.number }
-//                .forEach(viewContext.delete(_:))
-//            let newFavorite = StationEntity(context: viewContext)
-//            newFavorite.update(with: station)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//
-//    private func removeFavorite(stationNumber: String) {
-//        withAnimation {
-//            savedStations
-//                .filter { $0.number == stationNumber }
-//                .forEach(viewContext.delete(_:))
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-}
-
-#if DEBUG
-struct StationListView_Previews: PreviewProvider {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    static var previews: some View {
-        Group {
-            StationListView(
-                stationsService: MockFetchStationsService(),
-                savedStationsService: SavedStationServiceContainer(
-                    getService: FetchSavedStationsService(context: PersistenceController.preview.container.viewContext),
-                    addService: AddSavedStationService(context: PersistenceController.preview.container.viewContext),
-                    removeService: RemoveSavedStationService(context: PersistenceController.preview.container.viewContext)
-                )
-            )
-        }
-    }
-}
-#endif

@@ -8,10 +8,16 @@
 import Combine
 
 class MockFetchSavedStationService: FetchSavedStationServiceInterface {
-    var result: Result<[Station], Error> = .success([])
+    
+    var result: Result<[Station], Error> = .success([]) {
+        didSet {
+            print("Set Mock Result: \(result)")
+        }
+    }
     
     func fetchSaved() -> AnyPublisher<[Station], Error> {
         return Future<[Station], Error> { promise in
+            print("Mock Fetch Saved Result: \(self.result)")
             promise(self.result)
         }.eraseToAnyPublisher()
     }
@@ -22,6 +28,7 @@ class MockAddSavedStationService: AddSavedStationServiceInterface {
     
     func add(station: Station) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
+            print("Mock Add Saved Result: \(self.result)")
             promise(self.result)
         }.eraseToAnyPublisher()
     }
@@ -32,6 +39,7 @@ class MockRemoveSavedStationService: RemoveSavedStationServiceInterface {
     
     func remove(stations: [Station]) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
+            print("Mock Remove Saved Result: \(self.result)")
             promise(self.result)
         }.eraseToAnyPublisher()
     }

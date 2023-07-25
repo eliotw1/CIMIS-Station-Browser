@@ -43,6 +43,7 @@
 		73C6919E2A70607600120571 /* StationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6919D2A70607600120571 /* StationListController.swift */; };
 		73C691A02A706B2600120571 /* StationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6919F2A706B2600120571 /* StationDetailController.swift */; };
 		73C691A32A706DEC00120571 /* StationListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A22A706DEC00120571 /* StationListTests.swift */; };
+		73C691A62A70845700120571 /* StationDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A52A70845700120571 /* StationDetailsTests.swift */; };
 		73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		73C6919D2A70607600120571 /* StationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListController.swift; sourceTree = "<group>"; };
 		73C6919F2A706B2600120571 /* StationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailController.swift; sourceTree = "<group>"; };
 		73C691A22A706DEC00120571 /* StationListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTests.swift; sourceTree = "<group>"; };
+		73C691A52A70845700120571 /* StationDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsTests.swift; sourceTree = "<group>"; };
 		73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIMIS_Station_BrowserUITests.swift; path = ../../../.Trash/CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 		732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				73C691A42A70843C00120571 /* StationDetails */,
 				73C691A12A706DCF00120571 /* StationList */,
 				731F1E4F2A6F7B6D003DD16F /* Services */,
 			);
@@ -301,6 +304,14 @@
 				73C691A22A706DEC00120571 /* StationListTests.swift */,
 			);
 			path = StationList;
+			sourceTree = "<group>";
+		};
+		73C691A42A70843C00120571 /* StationDetails */ = {
+			isa = PBXGroup;
+			children = (
+				73C691A52A70845700120571 /* StationDetailsTests.swift */,
+			);
+			path = StationDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C691A32A706DEC00120571 /* StationListTests.swift in Sources */,
+				73C691A62A70845700120571 /* StationDetailsTests.swift in Sources */,
 				731F1E512A6F7B9A003DD16F /* ServiceContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

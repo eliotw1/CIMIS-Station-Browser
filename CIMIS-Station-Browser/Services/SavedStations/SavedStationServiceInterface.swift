@@ -6,14 +6,12 @@
 //
 
 import Combine
+import Foundation
 
-protocol SavedStationServiceInterface:
-    GetSavedStationServiceInterface,
-    AddSavedStationServiceInterface,
-    RemoveSavedStationServiceInterface {}
-
-protocol GetSavedStationServiceInterface {
-    func getSaved() -> AnyPublisher<[Station], Error>
+protocol SavedStationServiceInterface {
+    var getService: FetchSavedStationServiceInterface { get }
+    var addService: AddSavedStationServiceInterface { get }
+    var removeService: RemoveSavedStationServiceInterface { get }
 }
 
 protocol AddSavedStationServiceInterface {

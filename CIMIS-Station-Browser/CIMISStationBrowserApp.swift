@@ -20,7 +20,11 @@ struct CIMISStationBrowserApp: App {
         self.context = context
         services = ServicesContainer(
             fetchService: FetchStationsService(),
-            savedService: SavedStationService(context: context)
+            savedService: SavedStationServiceContainer(
+                getService: FetchSavedStationsService(context: context),
+                addService: AddSavedStationService(context: context),
+                removeService: RemoveSavedStationService(context: context)
+            )
         )
     }
     

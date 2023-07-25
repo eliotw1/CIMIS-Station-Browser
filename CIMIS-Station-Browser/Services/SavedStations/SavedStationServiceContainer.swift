@@ -9,25 +9,28 @@ import Combine
 import CoreData
 import Foundation
 
-struct SavedStationService: SavedStationServiceInterface {
+struct SavedStationServiceContainer: SavedStationServiceInterface {
+    let getService: FetchSavedStationServiceInterface
+    let addService: AddSavedStationServiceInterface
+    let removeService: RemoveSavedStationServiceInterface
+    
+    init(
+        getService: FetchSavedStationServiceInterface,
+        addService: AddSavedStationServiceInterface,
+        removeService: RemoveSavedStationServiceInterface)
+    {
+        self.getService = getService
+        self.addService = addService
+        self.removeService = removeService
+    }
+}
+
+struct AddSavedStationService: AddSavedStationServiceInterface {
     
     private let viewContext: NSManagedObjectContext
     
     init(context: NSManagedObjectContext) {
         self.viewContext = context
-    }
-    
-    func getSaved() -> AnyPublisher<[Station], Error> {
-        let fetchRequest = NSFetchRequest<StationEntity>(entityName: "StationEntity")
-        return Future<[Station], Error> { promise in
-            do {
-                let fetchedResults = try self.viewContext.fetch(fetchRequest)
-                let stations = fetchedResults.compactMap { $0.toStation() }
-                promise(.success(stations))
-            } catch {
-                promise(.failure(error))
-            }
-        }.eraseToAnyPublisher()
     }
     
     func add(station: Station) -> AnyPublisher<Bool, Error> {
@@ -43,6 +46,15 @@ struct SavedStationService: SavedStationServiceInterface {
             }
         }.eraseToAnyPublisher()
     }
+}
+
+struct RemoveSavedStationService: RemoveSavedStationServiceInterface {
+    
+    private let viewContext: NSManagedObjectContext
+    
+    init(context: NSManagedObjectContext) {
+        self.viewContext = context
+    }
     
     func remove(stations: [Station]) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
@@ -55,7 +67,6 @@ struct SavedStationService: SavedStationServiceInterface {
                 for object in fetchedResults {
                     self.viewContext.delete(object)
                 }
-                try self.viewContext.save()
                 promise(.success(true))
             } catch {
                 promise(.failure(error))

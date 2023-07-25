@@ -98,7 +98,7 @@ extension StationListViewModel {
 extension StationListViewModel {
     func getSavedStations() {
         savedStationsState = .updating(savedStations)
-        savedStationsService.getSaved()
+        savedStationsService.getService.fetchSaved()
             .sink(receiveCompletion: { [weak self] completion in
                 if case .failure(let error) = completion {
                     DispatchQueue.main.async {
@@ -125,7 +125,7 @@ extension StationListViewModel {
     }
     
     func addFavorite(_ newFavorite: Station) {
-        savedStationsService.add(station: newFavorite)
+        savedStationsService.addService.add(station: newFavorite)
             .sink(receiveCompletion: { [weak self] completion in
                 if case .failure(let error) = completion {
                     DispatchQueue.main.async {
@@ -143,7 +143,7 @@ extension StationListViewModel {
     }
     
     func removeFavorite(station: Station) {
-        savedStationsService.remove(stations: [station])
+        savedStationsService.removeService.remove(stations: [station])
             .sink(receiveCompletion: { [weak self] completion in
                 if case .failure(let error) = completion {
                     DispatchQueue.main.async {

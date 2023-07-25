@@ -278,15 +278,12 @@ struct StationListView_Previews: PreviewProvider {
         Group {
             StationListView(
                 stationsService: MockSuccessfulStationsService(),
-                savedStationsService: MockSavedStationService()
+                savedStationsService: SavedStationServiceContainer(
+                    getService: FetchSavedStationsService(context: PersistenceController.preview.container.viewContext),
+                    addService: AddSavedStationService(context: PersistenceController.preview.container.viewContext),
+                    removeService: RemoveSavedStationService(context: PersistenceController.preview.container.viewContext)
+                )
             )
-            .previewDisplayName("Success")
-            
-            StationListView(
-                stationsService: MockFailureStationsService(),
-                savedStationsService: MockFailingSavedStationService()
-            )
-            .previewDisplayName("Failure")
         }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct StationDetailsView: View {
     
     @ObservedObject var viewModel: StationDetailsViewModel
+    @State private var appKey: String = ""
     
     init(
         viewModel: StationDetailsViewModel
@@ -18,16 +19,34 @@ struct StationDetailsView: View {
     }
     
     var body: some View {
-        stationDetails
-            .navigationTitle(viewModel.station.name)
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
+        List {
+            Section(header: dataSectionHeader) {
+                EmptyView() // Replace With Data
+            }
+            Section(header: infoSectionHeader) {
+                DetailRow(title: "City", value: viewModel.station.city)
+                DetailRow(title: "Is Active", value: viewModel.station.isActive ? "Yes" : "No")
+                DetailRow(title: "Is ETO Station", value: viewModel.station.isEtoStation ? "Yes" : "No")
+                DetailRow(title: "Elevation", value: "\(viewModel.station.elevation)")
+                DetailRow(title: "Ground Cover", value: viewModel.station.groundCover)
+                DetailRow(title: "Latitude", value: viewModel.station.hmsLatitude)
+                DetailRow(title: "Longitude", value: viewModel.station.hmsLongitude)
+                DetailRow(title: "Siting Description", value: viewModel.station.sitingDesc)
+                DetailsRow(title: "Zip Codes", values: viewModel.station.zipCodes)
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle(viewModel.station.name)
+        .navigationBarItems(
+            trailing:
+                Button(
+                    action: {
                         viewModel.toggleSaved()
                     }, label: {
                         savedImage
-                    })
-            )
+                    }
+                )
+        )
     }
     
     var savedImage: Image {
@@ -36,13 +55,68 @@ struct StationDetailsView: View {
         : Image(systemName: "bookmark")
     }
     
-    var stationDetails: some View {
-        VStack {
+    var dataSectionHeader: some View {
+        VStack(alignment: .leading) {
+            Text("Data")
+                .font(.largeTitle)
+            TextField("YOUR-APP-KEY", text: $appKey)
+                .padding()
+                .font(.callout)
+                .background(Color.gray)
+                .cornerRadius(8)
+            Button(action: {
+                // Your action here
+            }, label: {
+                Text("Get Daily Station Data")
+                    .font(.callout)
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            })
+        }
+        .padding([.top])
+    }
+    
+    var infoSectionHeader: some View {
+        VStack(alignment: .leading) {
             Text(viewModel.station.name)
+                .font(.title)
             Text("Station #\(viewModel.station.number)")
-            if !viewModel.station.zipCodes.isEmpty {
-                Text("Supported Zip Codes: " + viewModel.station.zipCodes.joined(separator: ", "))
+                .font(.subheadline)
+        }
+    }
+    
+    struct DetailRow: View {
+        let title: String
+        let value: String
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(.headline)
+                Text(value)
+                    .font(.subheadline)
             }
+            .padding(.vertical, 4)
+        }
+    }
+    
+    struct DetailsRow: View {
+        let title: String
+        let values: [String]
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(.headline)
+                ForEach(values, id: \.self) {
+                    Text($0)
+                        .font(.subheadline)
+                }
+            }
+            .padding(.vertical, 4)
         }
     }
 }

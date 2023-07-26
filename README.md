@@ -1,7 +1,10 @@
 # CIMIS-Station-Browser
 
 ## Overview
- CIMIS-Station-Browser is a Swift-based mobile application designed to provide access to CIMIS Stations and run reports for the latest station data. CIMIS Station Data reports include valuable data points for agricultural and gardening use such as Eto, Soil Temperature, and Precipitation as well as other basic weather data.
+ CIMIS-Station-Browser is a Swift-based mobile application designed to provide access to CIMIS Stations and run reports for the latest station data. CIMIS Station Data reports include valuable data points for agricultural and gardening use such as Evapotranspiration (Eto), Soil Temperature, and Precipitation as well as other basic weather data.
+ 
+ ## Inspiration
+ Greg Alder - The Yard Posts: https://gregalder.com/yardposts/using-the-evapotranspiration-rate-to-water-your-garden-better/
 
 ## Features
 

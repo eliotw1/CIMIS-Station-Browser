@@ -38,7 +38,7 @@ git clone https://github.com/eliotw1/CIMIS-Station-Browser.git
 
 2. Open the project:
 
-Open the `CIMIS-Station-Browser.xcodeproj` file in Xcode.
+Open the project directory with Xcode.
 
 3. Run the project:
 

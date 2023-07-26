@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 getService: FetchSavedStationsService(context: context),
                 addService: AddSavedStationService(context: context),
                 removeService: RemoveSavedStationService(context: context)
-            )
+            ),
+            stationDataService: StationDataService()
         )
         self.store = SavedStationStore()
     }

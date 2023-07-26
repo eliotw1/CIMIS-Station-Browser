@@ -29,7 +29,7 @@ class StationDetailController {
         let viewModel = StationDetailsViewModel(
             station: station,
             savedStationsStore: store,
-            stationsService: services.fetchStationsService,
+            stationsDataService: services.stationDataService,
             savedStationsService: services.savedStationsService
         )
         let view = StationDetailsView(viewModel: viewModel)

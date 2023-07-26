@@ -10,4 +10,5 @@ import Foundation
 protocol ServicesInterface {
     var fetchStationsService: FetchStationsServiceInterface { get }
     var savedStationsService: SavedStationServiceInterface { get }
+    var stationDataService: StationDataServiceInterface { get }
 }

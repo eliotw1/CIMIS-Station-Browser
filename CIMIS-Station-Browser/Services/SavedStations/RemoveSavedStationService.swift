@@ -31,6 +31,7 @@ struct RemoveSavedStationService: RemoveSavedStationServiceInterface {
                 for object in fetchedResults {
                     self.viewContext.delete(object)
                 }
+                try self.viewContext.save()
                 promise(.success(true))
             } catch {
                 promise(.failure(error))

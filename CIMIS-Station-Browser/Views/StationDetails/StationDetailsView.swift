@@ -23,7 +23,6 @@ struct StationDetailsView: View {
             Section(
                 header: Text("Data")
                     .font(.largeTitle)
-                    .padding(.bottom)
                 ,
                 footer: dataSectionFooter
             ) {

@@ -21,7 +21,7 @@ struct StationDetailsView: View {
     var body: some View {
         List {
             Section(
-                header: Text("Data")
+                header: Text("Daily Report")
                     .font(.largeTitle)
                 ,
                 footer: dataSectionFooter

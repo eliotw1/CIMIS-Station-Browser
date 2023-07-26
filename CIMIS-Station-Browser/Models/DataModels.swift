@@ -27,7 +27,7 @@ struct StationDailyDataReport {
         valuesArray.append(NamedValue(title: "Air Temperature Max", value: record.dayAirTmpMax.value, qc: record.dayAirTmpMax.qc, unit: record.dayAirTmpMax.unit))
         valuesArray.append(NamedValue(title: "Air Temperature Min", value: record.dayAirTmpMin.value, qc: record.dayAirTmpMin.qc, unit: record.dayAirTmpMin.unit))
         valuesArray.append(NamedValue(title: "Dew Point", value: record.dayDewPnt.value, qc: record.dayDewPnt.qc, unit: record.dayDewPnt.unit))
-        valuesArray.append(NamedValue(title: "Eto", value: record.dayAsceEto.value, qc: record.dayAsceEto.qc, unit: record.dayAsceEto.unit))
+        valuesArray.append(NamedValue(title: "Evapotranspiration (Eto)", value: record.dayAsceEto.value, qc: record.dayAsceEto.qc, unit: record.dayAsceEto.unit))
         valuesArray.append(NamedValue(title: "Precipitation", value: record.dayPrecip.value, qc: record.dayPrecip.qc, unit: record.dayPrecip.unit))
         valuesArray.append(NamedValue(title: "Relative Humidity Average", value: record.dayRelHumAvg.value, qc: record.dayRelHumAvg.qc, unit: record.dayRelHumAvg.unit))
         valuesArray.append(NamedValue(title: "Relative Humidity Max", value: record.dayRelHumMax.value, qc: record.dayRelHumMax.qc, unit: record.dayRelHumMax.unit))

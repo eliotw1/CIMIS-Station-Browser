@@ -8,6 +8,7 @@
 import Foundation
 
 enum ServiceError: Error {
+    case badResponseData(message: String)
     case invalidURL(message: String)
     case missingService(message: String)
 }

@@ -44,6 +44,10 @@
 		73C691A02A706B2600120571 /* StationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6919F2A706B2600120571 /* StationDetailController.swift */; };
 		73C691A32A706DEC00120571 /* StationListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A22A706DEC00120571 /* StationListTests.swift */; };
 		73C691A62A70845700120571 /* StationDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A52A70845700120571 /* StationDetailsTests.swift */; };
+		73C691A82A70917E00120571 /* StationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A72A70917E00120571 /* StationDataService.swift */; };
+		73C691AA2A70918E00120571 /* StationDataServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691A92A70918E00120571 /* StationDataServiceInterface.swift */; };
+		73C691AC2A7091A300120571 /* MockStationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691AB2A7091A300120571 /* MockStationDataService.swift */; };
+		73C691AE2A70933600120571 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691AD2A70933600120571 /* DataModels.swift */; };
 		73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +108,10 @@
 		73C6919F2A706B2600120571 /* StationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailController.swift; sourceTree = "<group>"; };
 		73C691A22A706DEC00120571 /* StationListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTests.swift; sourceTree = "<group>"; };
 		73C691A52A70845700120571 /* StationDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsTests.swift; sourceTree = "<group>"; };
+		73C691A72A70917E00120571 /* StationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataService.swift; sourceTree = "<group>"; };
+		73C691A92A70918E00120571 /* StationDataServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataServiceInterface.swift; sourceTree = "<group>"; };
+		73C691AB2A7091A300120571 /* MockStationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStationDataService.swift; sourceTree = "<group>"; };
+		73C691AD2A70933600120571 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIMIS_Station_BrowserUITests.swift; path = ../../../.Trash/CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +156,9 @@
 		7311F0842A6F3411003316B3 /* GetStationData */ = {
 			isa = PBXGroup;
 			children = (
+				73C691AB2A7091A300120571 /* MockStationDataService.swift */,
+				73C691A72A70917E00120571 /* StationDataService.swift */,
+				73C691A92A70918E00120571 /* StationDataServiceInterface.swift */,
 				7311F0852A6F3461003316B3 /* station254.json */,
 				7311F0892A6F35AC003316B3 /* station213.json */,
 			);
@@ -254,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				732328CF2A6DC1CF000EF095 /* StationModels.swift */,
+				73C691AD2A70933600120571 /* DataModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,10 +462,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				732328E12A6E2779000EF095 /* MockFetchStationsService.swift in Sources */,
+				73C691AE2A70933600120571 /* DataModels.swift in Sources */,
 				73C691A02A706B2600120571 /* StationDetailController.swift in Sources */,
 				732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */,
 				731F1E4C2A6F7A6E003DD16F /* AddSavedStationService.swift in Sources */,
 				732328CE2A6DC190000EF095 /* Networking.swift in Sources */,
+				73C691AA2A70918E00120571 /* StationDataServiceInterface.swift in Sources */,
 				7311F0832A6F2B68003316B3 /* SavedStationServiceContainer.swift in Sources */,
 				7311F0942A6F4B88003316B3 /* FetchStationsServiceInterface.swift in Sources */,
 				7311F0922A6F4B4F003316B3 /* SavedStationServiceInterface.swift in Sources */,
@@ -461,10 +475,12 @@
 				732328D02A6DC1CF000EF095 /* StationModels.swift in Sources */,
 				73C6915D2A6FACFE00120571 /* AppRouter.swift in Sources */,
 				732328E52A6E2E46000EF095 /* MockNetworking.swift in Sources */,
+				73C691A82A70917E00120571 /* StationDataService.swift in Sources */,
 				73C691562A6F900600120571 /* StationDetailsViewModel.swift in Sources */,
 				73C691592A6F9D8C00120571 /* SavedStationStore.swift in Sources */,
 				73C6919E2A70607600120571 /* StationListController.swift in Sources */,
 				73C6915B2A6FACB300120571 /* AppDelegate.swift in Sources */,
+				73C691AC2A7091A300120571 /* MockStationDataService.swift in Sources */,
 				732328DC2A6E2123000EF095 /* FetchStationsService.swift in Sources */,
 				7311F0902A6F4AF9003316B3 /* ServiceError.swift in Sources */,
 				7311F08E2A6F4880003316B3 /* ServicesContainer.swift in Sources */,

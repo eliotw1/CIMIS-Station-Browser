@@ -10,12 +10,15 @@ import Foundation
 struct ServicesContainer: ServicesInterface {
     var fetchStationsService: FetchStationsServiceInterface
     var savedStationsService: SavedStationServiceInterface
+    var stationDataService: StationDataServiceInterface
     
     init(
         fetchService: FetchStationsServiceInterface,
-        savedService: SavedStationServiceInterface
+        savedService: SavedStationServiceInterface,
+        stationDataService: StationDataServiceInterface
     ) {
         self.fetchStationsService = fetchService
         self.savedStationsService = savedService
+        self.stationDataService = stationDataService
     }
 }

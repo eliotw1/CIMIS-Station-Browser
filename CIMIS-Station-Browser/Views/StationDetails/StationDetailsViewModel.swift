@@ -42,31 +42,6 @@ class StationDetailsViewModel: ObservableObject {
         }
     }
     
-    struct StationDailyDataReport {
-        // init from DataResponse
-        let date: String
-        let dayAirTmpAvg: Value
-        let dayAirTmpMax: Value
-        let dayAirTmpMin: Value
-        let dayDewPnt: Value
-        let dayAsceEto: Value
-        let dayPrecip: Value
-        let dayRelHumAvg: Value
-        let dayRelHumMax: Value
-        let dayRelHumMin: Value
-        let daySoilTmpAvg: Value
-        let daySolRadAvg: Value
-        let dayVapPresAvg: Value
-        let dayWindRun: Value
-        let dayWindSpdAvg: Value
-        
-        struct Value: Codable {
-            let value: String
-            let qc: String
-            let unit: String
-        }
-    }
-    
     /// Enum representing the state of the station report.
     enum ReportState {
         case none
@@ -184,23 +159,7 @@ extension StationDetailsViewModel {
         guard let provider = dataResponse.data.providers.first,
               let record = provider.records.first else { return nil }
         
-        return StationDailyDataReport(
-            date: record.date,
-            dayAirTmpAvg: .init(value: record.dayAirTmpAvg.value, qc: record.dayAirTmpAvg.qc, unit: record.dayAirTmpAvg.unit),
-            dayAirTmpMax: .init(value: record.dayAirTmpMax.value, qc: record.dayAirTmpMax.qc, unit: record.dayAirTmpMax.unit),
-            dayAirTmpMin: .init(value: record.dayAirTmpMin.value, qc: record.dayAirTmpMin.qc, unit: record.dayAirTmpMin.unit),
-            dayDewPnt: .init(value: record.dayDewPnt.value, qc: record.dayDewPnt.qc, unit: record.dayDewPnt.unit),
-            dayAsceEto: .init(value: record.dayAsceEto.value, qc: record.dayAsceEto.qc, unit: record.dayAsceEto.unit),
-            dayPrecip: .init(value: record.dayPrecip.value, qc: record.dayPrecip.qc, unit: record.dayPrecip.unit),
-            dayRelHumAvg: .init(value: record.dayRelHumAvg.value, qc: record.dayRelHumAvg.qc, unit: record.dayRelHumAvg.unit),
-            dayRelHumMax: .init(value: record.dayRelHumMax.value, qc: record.dayRelHumMax.qc, unit: record.dayRelHumMax.unit),
-            dayRelHumMin: .init(value: record.dayRelHumMin.value, qc: record.dayRelHumMin.qc, unit: record.dayRelHumMin.unit),
-            daySoilTmpAvg: .init(value: record.daySoilTmpAvg.value, qc: record.daySoilTmpAvg.qc, unit: record.daySoilTmpAvg.unit),
-            daySolRadAvg: .init(value: record.daySolRadAvg.value, qc: record.daySolRadAvg.qc, unit: record.daySolRadAvg.unit),
-            dayVapPresAvg: .init(value: record.dayVapPresAvg.value, qc: record.dayVapPresAvg.qc, unit: record.dayVapPresAvg.unit),
-            dayWindRun: .init(value: record.dayWindRun.value, qc: record.dayWindRun.qc, unit: record.dayWindRun.unit),
-            dayWindSpdAvg: .init(value: record.dayWindSpdAvg.value, qc: record.dayWindSpdAvg.qc, unit: record.dayWindSpdAvg.unit)
-        )
+        return StationDailyDataReport(from: record)
     }
     
     /// Toggles the saved status of the station.

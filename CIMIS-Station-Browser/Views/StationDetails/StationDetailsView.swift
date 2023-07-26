@@ -66,6 +66,11 @@ struct StationDetailsView: View {
                         savedImage
                     }
                 )
+                .accessibilityLabel(
+                    viewModel.savedState.isSaved
+                    ? "Remove From Saved Stations"
+                    : "Save Station"
+                )
         )
     }
     
@@ -86,6 +91,7 @@ struct StationDetailsView: View {
                     .font(.callout)
                     .background(Color.gray)
                     .cornerRadius(8)
+                    .accessibilityLabel("App Key")
                 Button(action: {
                     viewModel.getData(appKey: appKey)
                 }, label: {
@@ -97,6 +103,7 @@ struct StationDetailsView: View {
                         .background(Color.blue)
                         .cornerRadius(8)
                 })
+                .accessibilityHint("Fetches yesterday's daily station data report.")
             }
             .padding([.top])
         default: EmptyView()
@@ -110,6 +117,7 @@ struct StationDetailsView: View {
             Text("Station #\(viewModel.station.number)")
                 .font(.subheadline)
         }
+        .accessibilityElement(children: .combine)
     }
     
     struct DetailRow: View {
@@ -124,6 +132,8 @@ struct StationDetailsView: View {
                     .font(.subheadline)
             }
             .padding(.vertical, 4)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("\(title). \(value)")
         }
     }
     
@@ -141,43 +151,43 @@ struct StationDetailsView: View {
                 }
             }
             .padding(.vertical)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("\(title): " + values.joined(separator: ", "))
         }
     }
 }
 
 struct ReportDetailView: View {
-    let report: StationDetailsViewModel.StationDailyDataReport
+    let report: StationDailyDataReport
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("Date: \(report.date)")
                 .font(.title2)
                 .padding([.top, .bottom])
-            detailRow(title: "Day Air Temp Average", value: report.dayAirTmpAvg)
-            detailRow(title: "Day Air Temp Max", value: report.dayAirTmpMax)
-            detailRow(title: "Day Air Temp Min", value: report.dayAirTmpMin)
-            detailRow(title: "Day Dew Point", value: report.dayDewPnt)
-            detailRow(title: "Day ASCE ETo", value: report.dayAsceEto)
-            detailRow(title: "Day Precipitation", value: report.dayPrecip)
-            detailRow(title: "Day Relative Humidity Average", value: report.dayRelHumAvg)
-            detailRow(title: "Day Relative Humidity Max", value: report.dayRelHumMax)
-            detailRow(title: "Day Relative Humidity Min", value: report.dayRelHumMin)
-//            detailRow(title: "Day Soil Temp Average", value: report.daySoilTmpAvg)
-//            detailRow(title: "Day Solar Radiation Average", value: report.daySolRadAvg)
-//            detailRow(title: "Day Vapor Pressure Average", value: report.dayVapPresAvg)
-//            detailRow(title: "Day Wind Run", value: report.dayWindRun)
-//            detailRow(title: "Day Wind Speed Average", value: report.dayWindSpdAvg)
+            ForEach(report.values, id: \.title) { value in
+                ReportDetailRowView(
+                    title: value.title,
+                    value: value.value,
+                    unit: value.unit
+                )
+            }
         }
     }
+}
+
+struct ReportDetailRowView: View {
+    let title: String
+    let value: String
+    let unit: String
     
-    func detailRow(
-        title: String,
-        value: StationDetailsViewModel.StationDailyDataReport.Value
-    ) -> some View {
+    var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-            Text("Value: \(value.value) \(value.unit)")
+            Text("Value: \(value) \(unit)")
         }
         .padding(.bottom)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title): " + value + unit)
     }
 }

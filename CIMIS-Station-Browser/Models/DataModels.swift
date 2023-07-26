@@ -7,13 +7,47 @@
 
 import Foundation
 
+struct StationDailyDataReport {
+    let date: String
+    let values: [NamedValue]
+    
+    struct NamedValue {
+        let title: String
+        let value: String
+        let qc: String
+        let unit: String
+    }
+    
+    init(
+        from record: DataResponse.DataClass.Provider.Record
+    ) {
+        self.date = record.date
+        var valuesArray: [NamedValue] = []
+        valuesArray.append(NamedValue(title: "Air Temperature Average", value: record.dayAirTmpAvg.value, qc: record.dayAirTmpAvg.qc, unit: record.dayAirTmpAvg.unit))
+        valuesArray.append(NamedValue(title: "Air Temperature Max", value: record.dayAirTmpMax.value, qc: record.dayAirTmpMax.qc, unit: record.dayAirTmpMax.unit))
+        valuesArray.append(NamedValue(title: "Air Temperature Min", value: record.dayAirTmpMin.value, qc: record.dayAirTmpMin.qc, unit: record.dayAirTmpMin.unit))
+        valuesArray.append(NamedValue(title: "Dew Point", value: record.dayDewPnt.value, qc: record.dayDewPnt.qc, unit: record.dayDewPnt.unit))
+        valuesArray.append(NamedValue(title: "Eto", value: record.dayAsceEto.value, qc: record.dayAsceEto.qc, unit: record.dayAsceEto.unit))
+        valuesArray.append(NamedValue(title: "Precipitation", value: record.dayPrecip.value, qc: record.dayPrecip.qc, unit: record.dayPrecip.unit))
+        valuesArray.append(NamedValue(title: "Relative Humidity Average", value: record.dayRelHumAvg.value, qc: record.dayRelHumAvg.qc, unit: record.dayRelHumAvg.unit))
+        valuesArray.append(NamedValue(title: "Relative Humidity Max", value: record.dayRelHumMax.value, qc: record.dayRelHumMax.qc, unit: record.dayRelHumMax.unit))
+        valuesArray.append(NamedValue(title: "Relative Humidity Min", value: record.dayRelHumMin.value, qc: record.dayRelHumMin.qc, unit: record.dayRelHumMin.unit))
+        valuesArray.append(NamedValue(title: "Soil Temperature Average", value: record.daySoilTmpAvg.value, qc: record.daySoilTmpAvg.qc, unit: record.daySoilTmpAvg.unit))
+        valuesArray.append(NamedValue(title: "Solar Radiation Average", value: record.daySolRadAvg.value, qc: record.daySolRadAvg.qc, unit: record.daySolRadAvg.unit))
+        valuesArray.append(NamedValue(title: "Vapor Pressure Average", value: record.dayVapPresAvg.value, qc: record.dayVapPresAvg.qc, unit: record.dayVapPresAvg.unit))
+        valuesArray.append(NamedValue(title: "Wind Run", value: record.dayWindRun.value, qc: record.dayWindRun.qc, unit: record.dayWindRun.unit))
+        valuesArray.append(NamedValue(title: "Wind Speed Average", value: record.dayWindSpdAvg.value, qc: record.dayWindSpdAvg.qc, unit: record.dayWindSpdAvg.unit))
+        self.values = valuesArray
+    }
+}
+
 struct DataResponse: Codable {
     let data: DataClass
     
     enum CodingKeys: String, CodingKey {
         case data = "Data"
     }
-
+    
     struct DataClass: Codable {
         let providers: [Provider]
         

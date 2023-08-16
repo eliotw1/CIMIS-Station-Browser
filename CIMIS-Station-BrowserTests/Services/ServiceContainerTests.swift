@@ -33,8 +33,12 @@ class ServiceContainerTests: XCTestCase {
         
         let fetchService = MockFetchStationsService()
         let savedService = MockSavedStationService()
-        
-        servicesContainer = ServicesContainer(fetchService: fetchService, savedService: savedService)
+        let dataService = MockStationDataService()
+        servicesContainer = ServicesContainer(
+            fetchService: fetchService,
+            savedService: savedService,
+            stationDataService: dataService
+        )
         cancellables = []
     }
     

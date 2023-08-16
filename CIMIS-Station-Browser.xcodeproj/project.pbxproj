@@ -50,7 +50,6 @@
 		73C691AE2A70933600120571 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691AD2A70933600120571 /* DataModels.swift */; };
 		73E0377A2A70C60F00C4F8D9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 73E037792A70C60F00C4F8D9 /* README.md */; };
 		73E0377C2A70C9DA00C4F8D9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 73E0377B2A70C9DA00C4F8D9 /* LICENSE */; };
-		73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +115,6 @@
 		73C691AD2A70933600120571 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		73E037792A70C60F00C4F8D9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		73E0377B2A70C9DA00C4F8D9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIMIS_Station_BrowserUITests.swift; path = ../../../.Trash/CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +182,6 @@
 				73E0377B2A70C9DA00C4F8D9 /* LICENSE */,
 				7323289D2A6DB91F000EF095 /* CIMIS-Station-Browser */,
 				732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */,
-				732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */,
 				7323289C2A6DB91F000EF095 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -232,14 +229,6 @@
 				731F1E4F2A6F7B6D003DD16F /* Services */,
 			);
 			path = "CIMIS-Station-BrowserTests";
-			sourceTree = "<group>";
-		};
-		732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */ = {
-			isa = PBXGroup;
-			children = (
-				73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */,
-			);
-			path = "CIMIS-Station-BrowserUITests";
 			sourceTree = "<group>";
 		};
 		732328D12A6DC2F8000EF095 /* Views */ = {
@@ -518,7 +507,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				732328BF2A6DB924000EF095 /* (null) in Sources */,
-				73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,6 @@
 		732328A62A6DB924000EF095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732328A52A6DB924000EF095 /* Preview Assets.xcassets */; };
 		732328A82A6DB924000EF095 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328A72A6DB924000EF095 /* PersistenceController.swift */; };
 		732328AB2A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732328A92A6DB924000EF095 /* CIMISStationBrowser.xcdatamodeld */; };
-		732328BF2A6DB924000EF095 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		732328CE2A6DC190000EF095 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328CD2A6DC190000EF095 /* Networking.swift */; };
 		732328D02A6DC1CF000EF095 /* StationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328CF2A6DC1CF000EF095 /* StationModels.swift */; };
 		732328D32A6DC316000EF095 /* StationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732328D22A6DC316000EF095 /* StationListView.swift */; };
@@ -50,18 +49,10 @@
 		73C691AE2A70933600120571 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C691AD2A70933600120571 /* DataModels.swift */; };
 		73E0377A2A70C60F00C4F8D9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 73E037792A70C60F00C4F8D9 /* README.md */; };
 		73E0377C2A70C9DA00C4F8D9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 73E0377B2A70C9DA00C4F8D9 /* LICENSE */; };
-		73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		732328B12A6DB924000EF095 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 732328932A6DB91F000EF095 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7323289A2A6DB91F000EF095;
-			remoteInfo = "CIMIS-Station-Browser";
-		};
-		732328BB2A6DB924000EF095 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 732328932A6DB91F000EF095 /* Project object */;
 			proxyType = 1;
@@ -91,7 +82,6 @@
 		732328A72A6DB924000EF095 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		732328AA2A6DB924000EF095 /* CIMIS_Station_Browser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CIMIS_Station_Browser.xcdatamodel; sourceTree = "<group>"; };
 		732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIMIS-Station-BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		732328CD2A6DC190000EF095 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		732328CF2A6DC1CF000EF095 /* StationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModels.swift; sourceTree = "<group>"; };
 		732328D22A6DC316000EF095 /* StationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListView.swift; sourceTree = "<group>"; };
@@ -116,7 +106,6 @@
 		73C691AD2A70933600120571 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		73E037792A70C60F00C4F8D9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		73E0377B2A70C9DA00C4F8D9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIMIS_Station_BrowserUITests.swift; path = ../../../.Trash/CIMIS_Station_BrowserUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +117,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		732328AD2A6DB924000EF095 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		732328B72A6DB924000EF095 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -184,7 +166,6 @@
 				73E0377B2A70C9DA00C4F8D9 /* LICENSE */,
 				7323289D2A6DB91F000EF095 /* CIMIS-Station-Browser */,
 				732328B32A6DB924000EF095 /* CIMIS-Station-BrowserTests */,
-				732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */,
 				7323289C2A6DB91F000EF095 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,7 +175,6 @@
 			children = (
 				7323289B2A6DB91F000EF095 /* CIMIS-Station-Browser.app */,
 				732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */,
-				732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,14 +212,6 @@
 				731F1E4F2A6F7B6D003DD16F /* Services */,
 			);
 			path = "CIMIS-Station-BrowserTests";
-			sourceTree = "<group>";
-		};
-		732328BD2A6DB924000EF095 /* CIMIS-Station-BrowserUITests */ = {
-			isa = PBXGroup;
-			children = (
-				73F323F52A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift */,
-			);
-			path = "CIMIS-Station-BrowserUITests";
 			sourceTree = "<group>";
 		};
 		732328D12A6DC2F8000EF095 /* Views */ = {
@@ -370,24 +342,6 @@
 			productReference = 732328B02A6DB924000EF095 /* CIMIS-Station-BrowserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		732328B92A6DB924000EF095 /* CIMIS-Station-BrowserUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 732328CA2A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-BrowserUITests" */;
-			buildPhases = (
-				732328B62A6DB924000EF095 /* Sources */,
-				732328B72A6DB924000EF095 /* Frameworks */,
-				732328B82A6DB924000EF095 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				732328BC2A6DB924000EF095 /* PBXTargetDependency */,
-			);
-			name = "CIMIS-Station-BrowserUITests";
-			productName = "CIMIS-Station-BrowserUITests";
-			productReference = 732328BA2A6DB924000EF095 /* CIMIS-Station-BrowserUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -403,11 +357,6 @@
 					};
 					732328AF2A6DB924000EF095 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 7323289A2A6DB91F000EF095;
-					};
-					732328B92A6DB924000EF095 = {
-						CreatedOnToolsVersion = 13.4.1;
-						LastSwiftMigration = 1340;
 						TestTargetID = 7323289A2A6DB91F000EF095;
 					};
 				};
@@ -427,7 +376,6 @@
 			targets = (
 				7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */,
 				732328AF2A6DB924000EF095 /* CIMIS-Station-BrowserTests */,
-				732328B92A6DB924000EF095 /* CIMIS-Station-BrowserUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -449,13 +397,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		732328AE2A6DB924000EF095 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		732328B82A6DB924000EF095 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,15 +454,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		732328B62A6DB924000EF095 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				732328BF2A6DB924000EF095 /* (null) in Sources */,
-				73F323F62A6F8DA200CDBF47 /* CIMIS_Station_BrowserUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -529,11 +461,6 @@
 			isa = PBXTargetDependency;
 			target = 7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */;
 			targetProxy = 732328B12A6DB924000EF095 /* PBXContainerItemProxy */;
-		};
-		732328BC2A6DB924000EF095 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7323289A2A6DB91F000EF095 /* CIMIS-Station-Browser */;
-			targetProxy = 732328BB2A6DB924000EF095 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -743,53 +670,6 @@
 			};
 			name = Release;
 		};
-		732328CB2A6DB924000EF095 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "CIMIS-Station-Browser";
-			};
-			name = Debug;
-		};
-		732328CC2A6DB924000EF095 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "gov.ca.water.CIMIS.StationBrowser.CIMIS-Station-BrowserUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "CIMIS-Station-Browser";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -816,15 +696,6 @@
 			buildConfigurations = (
 				732328C82A6DB924000EF095 /* Debug */,
 				732328C92A6DB924000EF095 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		732328CA2A6DB924000EF095 /* Build configuration list for PBXNativeTarget "CIMIS-Station-BrowserUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				732328CB2A6DB924000EF095 /* Debug */,
-				732328CC2A6DB924000EF095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

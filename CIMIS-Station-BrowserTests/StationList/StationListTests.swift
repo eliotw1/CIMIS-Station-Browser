@@ -33,7 +33,12 @@ class StationListTests: XCTestCase {
     override func setUpWithError() throws {
         let fetchService = MockFetchStationsService()
         let savedService = MockSavedStationService()
-        mockService = ServicesContainer(fetchService: fetchService, savedService: savedService)
+        let dataService = MockStationDataService()
+        mockService = ServicesContainer(
+            fetchService: fetchService,
+            savedService: savedService,
+            stationDataService: dataService
+        )
         testStore = SavedStationStore()
         viewModel = StationListViewModel(
             stationsService: mockService.fetchStationsService,
